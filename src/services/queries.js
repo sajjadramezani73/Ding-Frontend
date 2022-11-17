@@ -6,7 +6,7 @@ export const getIndex = async () => {
 }
 
 export const signupUser = async (params) => {
-    const res = await service.post(`/api/users/singup`, { ...params });
+    const res = await service.post(`/api/users/signup`, {...params});
     return res?.data;
 };
 

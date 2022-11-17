@@ -21,129 +21,66 @@ const LoadSvgIcon = ({ name, size = 24, color = '#6C6C6C', weight = 1, fill = "n
                         />
                     </svg>
                 )
-            case 'passwordHide':
+            // case 'passwordHide':
+            //     return (
+            //         <svg width={size} height={size + 1} viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+            //             <path
+            //                 d="M4.88998 11.61C3.52151 10.8033 2.31537 9.74862 1.33331 8.5C1.33331 8.5 4.31998 4.5 7.99998 4.5C9.09551 4.52706 10.166 4.8334 11.11 5.39"
+            //                 stroke={color}
+            //                 strokeLinecap="round"
+            //                 strokeLinejoin="round"
+            //             />
+            //             <path
+            //                 d="M12.8167 6.58667C13.497 7.1596 14.1169 7.80073 14.6667 8.5C14.2373 9.04129 13.7676 9.5492 13.2613 10.0193C12.2 11.0333 10.2267 12.5 7.99999 12.5C7.59608 12.4991 7.19356 12.4528 6.79999 12.362"
+            //                 stroke={color}
+            //                 strokeLinecap="round"
+            //                 strokeLinejoin="round"
+            //             />
+            //             <path
+            //                 d="M8.78058 10.3427C9.26419 10.1381 9.64752 9.75096 9.84725 9.26533C9.87191 9.206 9.89325 9.14667 9.91391 9.086"
+            //                 stroke={color}
+            //                 strokeLinecap="round"
+            //                 strokeLinejoin="round"
+            //             />
+            //             <path
+            //                 d="M9.41326 7.08598C9.22918 6.89321 9.00842 6.73917 8.76397 6.63293C8.51951 6.52669 8.25628 6.47038 7.98975 6.46733C7.72322 6.46427 7.45877 6.51451 7.21194 6.61512C6.9651 6.71572 6.74087 6.86465 6.55242 7.05315C6.36396 7.24165 6.21509 7.46591 6.11454 7.71277C6.014 7.95963 5.96381 8.22409 5.96693 8.49062C5.97006 8.75715 6.02642 9.02036 6.13272 9.2648C6.23902 9.50923 6.39311 9.72995 6.58593 9.91398"
+            //                 stroke={color}
+            //                 strokeLinecap="round"
+            //                 strokeLinejoin="round"
+            //             />
+            //             <path
+            //                 d="M6.58663 9.91333L2.66663 13.8333"
+            //                 stroke={color}
+            //                 strokeLinecap="round"
+            //                 strokeLinejoin="round"
+            //             />
+            //             <path
+            //                 d="M11.2599 5.23999L6.58655 9.91332"
+            //                 stroke={color}
+            //                 strokeLinecap="round"
+            //                 strokeLinejoin="round"
+            //             />
+            //             <path
+            //                 d="M13.3332 3.16666L11.2599 5.23999"
+            //                 stroke={color}
+            //                 strokeLinecap="round"
+            //                 strokeLinejoin="round"
+            //             />
+            //         </svg>
+            //     )
+            case 'lock':
                 return (
-                    <svg width={size} height={size + 1} viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M4.88998 11.61C3.52151 10.8033 2.31537 9.74862 1.33331 8.5C1.33331 8.5 4.31998 4.5 7.99998 4.5C9.09551 4.52706 10.166 4.8334 11.11 5.39"
-                            stroke={color}
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                        />
-                        <path
-                            d="M12.8167 6.58667C13.497 7.1596 14.1169 7.80073 14.6667 8.5C14.2373 9.04129 13.7676 9.5492 13.2613 10.0193C12.2 11.0333 10.2267 12.5 7.99999 12.5C7.59608 12.4991 7.19356 12.4528 6.79999 12.362"
-                            stroke={color}
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                        />
-                        <path
-                            d="M8.78058 10.3427C9.26419 10.1381 9.64752 9.75096 9.84725 9.26533C9.87191 9.206 9.89325 9.14667 9.91391 9.086"
-                            stroke={color}
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                        />
-                        <path
-                            d="M9.41326 7.08598C9.22918 6.89321 9.00842 6.73917 8.76397 6.63293C8.51951 6.52669 8.25628 6.47038 7.98975 6.46733C7.72322 6.46427 7.45877 6.51451 7.21194 6.61512C6.9651 6.71572 6.74087 6.86465 6.55242 7.05315C6.36396 7.24165 6.21509 7.46591 6.11454 7.71277C6.014 7.95963 5.96381 8.22409 5.96693 8.49062C5.97006 8.75715 6.02642 9.02036 6.13272 9.2648C6.23902 9.50923 6.39311 9.72995 6.58593 9.91398"
-                            stroke={color}
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                        />
-                        <path
-                            d="M6.58663 9.91333L2.66663 13.8333"
-                            stroke={color}
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                        />
-                        <path
-                            d="M11.2599 5.23999L6.58655 9.91332"
-                            stroke={color}
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                        />
-                        <path
-                            d="M13.3332 3.16666L11.2599 5.23999"
-                            stroke={color}
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                        />
+                    <svg width={size} height={size} viewBox="0 0 11 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="0.5" y="4.73077" width="10" height="7.46154" rx="0.5" stroke={color} />
+                        <path d="M2.19231 3.80769C2.19231 1.98091 3.67321 0.5 5.5 0.5C7.32679 0.5 8.80769 1.98091 8.80769 3.80769V4.57692H2.19231V3.80769Z" stroke="#D9D9D9" />
+                        <circle cx="5.5" cy="8.73076" r="1.26923" fill={color} />
                     </svg>
                 )
-            case 'edit':
+            case 'check':
                 return (
-                    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg width={size} height={size} viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
-                            d="M11 4H4C3.46957 4 2.96086 4.21071 2.58579 4.58579C2.21071 4.96086 2 5.46957 2 6V20C2 20.5304 2.21071 21.0391 2.58579 21.4142C2.96086 21.7893 3.46957 22 4 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V13"
-                            stroke={color}
-                            strokeWidth={weight}
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                        />
-                        <path
-                            d="M18.5 2.49998C18.8978 2.10216 19.4374 1.87866 20 1.87866C20.5626 1.87866 21.1022 2.10216 21.5 2.49998C21.8978 2.89781 22.1213 3.43737 22.1213 3.99998C22.1213 4.56259 21.8978 5.10216 21.5 5.49998L12 15L8 16L9 12L18.5 2.49998Z"
-                            stroke={color}
-                            strokeWidth={weight}
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                        />
-                    </svg>
-                )
-            case 'dragDrop':
-                return (
-                    <svg xmlns="http://www.w3.org/2000/svg"
-                        width={size}
-                        height={size}
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={weight}
-                        stroke={color}
-                    >
-                        <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M12 16.5V9.75m0 0l3 3m-3-3l-3 3M6.75 19.5a4.5 4.5 0 01-1.41-8.775 5.25 5.25 0 0110.233-2.33 3 3 0 013.758 3.848A3.752 3.752 0 0118 19.5H6.75z"
-                        />
-                    </svg>
-                )
-            case 'trash':
-                return (
-                    <svg width={size} height={size} viewBox="0 0 22 22" fill={fill} xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M1.83337 5.5H20.1667"
-                            stroke={color}
-                            strokeWidth={weight}
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                        />
-                        <path
-                            d="M18.1867 5.69238L17.2792 18.4616C17.2501 18.9265 17.0437 19.3625 16.7026 19.6797C16.3615 19.997 15.9117 20.1712 15.4459 20.1666H6.55423C6.08955 20.1676 5.64141 19.9942 5.29841 19.6807C4.95749 19.3628 4.75091 18.9267 4.7209 18.4616L3.81335 5.69238"
-                            stroke={color}
-                            strokeWidth={weight}
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                        />
-                        <path
-                            d="M11 8.8916V17.1416"
-                            stroke={color}
-                            strokeWidth={weight}
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                        />
-                        <path
-                            d="M13.75 9.78027V16.1969"
-                            stroke={color}
-                            strokeWidth={weight}
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                        />
-                        <path
-                            d="M8.25 9.78027V16.1969"
-                            stroke={color}
-                            strokeWidth={weight}
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                        />
-                        <path
-                            d="M9.16671 1.83301H12.8334C13.3185 1.83661 13.7827 2.03091 14.1257 2.37395C14.4688 2.71699 14.6631 3.18122 14.6667 3.66634V5.49967H7.33337V3.66634C7.33697 3.18122 7.5313 2.71699 7.87434 2.37395C8.21738 2.03091 8.68159 1.83661 9.16671 1.83301V1.83301Z"
+                            d="M2.66675 8.4067L5.8901 11.6334C6.02307 11.7617 6.20063 11.8334 6.38542 11.8334C6.5702 11.8334 6.74777 11.7617 6.88074 11.6334L13.3334 3.83337"
                             stroke={color}
                             strokeWidth={weight}
                             strokeLinecap="round"
@@ -151,6 +88,97 @@ const LoadSvgIcon = ({ name, size = 24, color = '#6C6C6C', weight = 1, fill = "n
                         />
                     </svg>
                 )
+            case 'loading':
+                return (
+                    <svg className="animate-spin" xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none"  >
+                        <circle style={{ opacity: '0.25' }} cx="12" cy="12" r="10" stroke={color} strokeWidth="4"></circle>
+                        <path style={{ opacity: '0.75' }} fill={fill} d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                        ></path>
+                    </svg>
+                )
+            // case 'edit':
+            //     return (
+            //         <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            //             <path
+            //                 d="M11 4H4C3.46957 4 2.96086 4.21071 2.58579 4.58579C2.21071 4.96086 2 5.46957 2 6V20C2 20.5304 2.21071 21.0391 2.58579 21.4142C2.96086 21.7893 3.46957 22 4 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V13"
+            //                 stroke={color}
+            //                 strokeWidth={weight}
+            //                 strokeLinecap="round"
+            //                 strokeLinejoin="round"
+            //             />
+            //             <path
+            //                 d="M18.5 2.49998C18.8978 2.10216 19.4374 1.87866 20 1.87866C20.5626 1.87866 21.1022 2.10216 21.5 2.49998C21.8978 2.89781 22.1213 3.43737 22.1213 3.99998C22.1213 4.56259 21.8978 5.10216 21.5 5.49998L12 15L8 16L9 12L18.5 2.49998Z"
+            //                 stroke={color}
+            //                 strokeWidth={weight}
+            //                 strokeLinecap="round"
+            //                 strokeLinejoin="round"
+            //             />
+            //         </svg>
+            //     )
+            // case 'dragDrop':
+            //     return (
+            //         <svg xmlns="http://www.w3.org/2000/svg"
+            //             width={size}
+            //             height={size}
+            //             fill="none"
+            //             viewBox="0 0 24 24"
+            //             strokeWidth={weight}
+            //             stroke={color}
+            //         >
+            //             <path
+            //                 strokeLinecap="round"
+            //                 strokeLinejoin="round"
+            //                 d="M12 16.5V9.75m0 0l3 3m-3-3l-3 3M6.75 19.5a4.5 4.5 0 01-1.41-8.775 5.25 5.25 0 0110.233-2.33 3 3 0 013.758 3.848A3.752 3.752 0 0118 19.5H6.75z"
+            //             />
+            //         </svg>
+            //     )
+            // case 'trash':
+            //     return (
+            //         <svg width={size} height={size} viewBox="0 0 22 22" fill={fill} xmlns="http://www.w3.org/2000/svg">
+            //             <path
+            //                 d="M1.83337 5.5H20.1667"
+            //                 stroke={color}
+            //                 strokeWidth={weight}
+            //                 strokeLinecap="round"
+            //                 strokeLinejoin="round"
+            //             />
+            //             <path
+            //                 d="M18.1867 5.69238L17.2792 18.4616C17.2501 18.9265 17.0437 19.3625 16.7026 19.6797C16.3615 19.997 15.9117 20.1712 15.4459 20.1666H6.55423C6.08955 20.1676 5.64141 19.9942 5.29841 19.6807C4.95749 19.3628 4.75091 18.9267 4.7209 18.4616L3.81335 5.69238"
+            //                 stroke={color}
+            //                 strokeWidth={weight}
+            //                 strokeLinecap="round"
+            //                 strokeLinejoin="round"
+            //             />
+            //             <path
+            //                 d="M11 8.8916V17.1416"
+            //                 stroke={color}
+            //                 strokeWidth={weight}
+            //                 strokeLinecap="round"
+            //                 strokeLinejoin="round"
+            //             />
+            //             <path
+            //                 d="M13.75 9.78027V16.1969"
+            //                 stroke={color}
+            //                 strokeWidth={weight}
+            //                 strokeLinecap="round"
+            //                 strokeLinejoin="round"
+            //             />
+            //             <path
+            //                 d="M8.25 9.78027V16.1969"
+            //                 stroke={color}
+            //                 strokeWidth={weight}
+            //                 strokeLinecap="round"
+            //                 strokeLinejoin="round"
+            //             />
+            //             <path
+            //                 d="M9.16671 1.83301H12.8334C13.3185 1.83661 13.7827 2.03091 14.1257 2.37395C14.4688 2.71699 14.6631 3.18122 14.6667 3.66634V5.49967H7.33337V3.66634C7.33697 3.18122 7.5313 2.71699 7.87434 2.37395C8.21738 2.03091 8.68159 1.83661 9.16671 1.83301V1.83301Z"
+            //                 stroke={color}
+            //                 strokeWidth={weight}
+            //                 strokeLinecap="round"
+            //                 strokeLinejoin="round"
+            //             />
+            //         </svg>
+            //     )
             // case 'passwordShow':
             //     return (
             //         <svg width={size} height={size + 1} viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -266,18 +294,7 @@ const LoadSvgIcon = ({ name, size = 24, color = '#6C6C6C', weight = 1, fill = "n
             //             />
             //         </svg>
             //     )
-            case 'check':
-                return (
-                    <svg width={size} height={size} viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M2.66675 8.4067L5.8901 11.6334C6.02307 11.7617 6.20063 11.8334 6.38542 11.8334C6.5702 11.8334 6.74777 11.7617 6.88074 11.6334L13.3334 3.83337"
-                            stroke={color}
-                            strokeWidth={weight}
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                        />
-                    </svg>
-                )
+
             // case 'doubleCheck':
             //     return (
             //         <svg width={size} height={size} viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -414,14 +431,7 @@ const LoadSvgIcon = ({ name, size = 24, color = '#6C6C6C', weight = 1, fill = "n
             //             />
             //         </svg>
             //     )
-            case 'loading':
-                return (
-                    <svg className="animate-spin" xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none"  >
-                        <circle style={{ opacity: '0.25' }} cx="12" cy="12" r="10" stroke={color} strokeWidth="4"></circle>
-                        <path style={{ opacity: '0.75' }} fill={fill} d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                        ></path>
-                    </svg>
-                )
+
             // case 'camera':
             //     return (
             //         <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
