@@ -9,7 +9,7 @@ const customColors = {
   secondaryLight: '#91C6FC',
 
   caption: '#7A7A7A',
-  captionLight: '#d4d4d4',
+  captionLight: '#D9D9D9',
   captionDark: '#545353',
   danger: '#FF3B3B',
   light: '#F9F9F9',

@@ -1,4 +1,3 @@
-import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import SignupLogin from '../../pages/Signup-login'
 import Splash from '../../pages/Splash'
@@ -8,7 +7,7 @@ import Home from '../../pages/Home';
 
 const Layout = () => {
     return (
-        <React.Fragment>
+        <div className='max-w-lg h-full bg-light mx-auto shadow-xl'>
             <Routes>
                 <Route path="/" element={<Splash />} />
                 <Route path="/home" element={<Home />} />
@@ -25,7 +24,7 @@ const Layout = () => {
                 pauseOnFocusLoss
                 draggable
                 pauseOnHover />
-        </React.Fragment>
+        </div>
     )
 }
 
