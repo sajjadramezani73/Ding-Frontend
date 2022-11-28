@@ -11,7 +11,7 @@ const Login = () => {
 
   return (
     <>
-      <p className='text-xl text-white font-bold text-center mb-10'>ورود</p>
+      <p className='text-xl text-body font-bold text-center mb-6'>ورود</p>
       <div className='mb-4'>
         <Input
           value={infoLogin.username}
@@ -29,7 +29,7 @@ const Login = () => {
           onChange={(e => setInfoLogin({ ...infoLogin, password: e.target.value }))}
         />
       </div>
-      <div className='mt-12'>
+      <div className='mt-8'>
         <Button
           title="ورود"
           className="w-full"

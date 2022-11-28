@@ -92,7 +92,7 @@ const Signup = () => {
                     onChange={(e => setInfoSignup({ ...infoSignup, confirmPassword: e.target.value }))}
                 />
             </div>
-            <div className="flex mr-1.5">
+            <div className="flex mr-0.5 gap-x-3">
                 {genders.map(item => {
                     const activeGender = item.value === infoSignup.gender ? true : false
                     return (
@@ -106,7 +106,7 @@ const Signup = () => {
                     )
                 })}
             </div>
-            <div className='mt-12'>
+            <div className='mt-8'>
                 <Button
                     title="ثبت نام"
                     className="w-full"
