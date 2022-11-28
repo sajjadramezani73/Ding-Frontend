@@ -7,7 +7,7 @@ const SignupLogin = () => {
     const [mode, setMode] = useState('login');
 
     return (
-        <div className="h-full bg-primary">
+        <div className="h-full bg-primary bg-[url('./assets/images/cover.png')] bg-[length:90%] bg-no-repeat bg-[center_top_30px]">
             <div className="h-full flex flex-col justify-end p-4">
                 <div className="bg-white p-4 rounded-3xl">
                     {mode === 'login' && <Login />}
