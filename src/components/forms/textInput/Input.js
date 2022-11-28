@@ -29,8 +29,8 @@ const Input = ({
 
     return (
         <>
-            <div className={`flex items-center h-10 rounded-3xl bg-white`}>
-                <div className='w-10 h-full mr-2 flex justify-center items-center'>
+            <div className={`flex items-center border border-captionLight h-10 rounded-md bg-white`}>
+                <div className='w-10 h-full flex justify-center items-center'>
                     <LoadSvgIcon name={iconName} size="16" weight={1.5} color="var(--color-captionLight)" />
                 </div>
                 <div className='flex-grow h-full relative'>
@@ -40,26 +40,16 @@ const Input = ({
                         onChange={e => onChangeHandler(e.target.value)}
                         onFocus={() => setFocused(true)}
                         onBlur={() => setFocused(false)}
-                        className="w-full h-full outline-none bg-transparent text-xxs text-body font-bold componentinput"
+                        className="w-full h-full outline-none bg-transparent text-xxs text-body font-bold placeholder:text-captionLight placeholder:text-[11px] componentinput"
                         placeholder={placeholder}
                         {...attributes} />
                 </div>
                 <div className="w-10 min-w-[40px] h-full flex items-center justify-center">
-                    <span className='w-4 h-4 rounded-full bg-green-500 flex items-center justify-center'>
-                        <LoadSvgIcon name="check" size={13} color="#ffffff" />
+                    <span className=''>
+                        <LoadSvgIcon name="check" size={18} weight={1.5} color="var(--color-primary)" />
                     </span>
                 </div>
             </div>
-            
-            <style>
-                {`
-                    .componentinput::placeholder {
-                        color:var(--color-captionLight);
-                        font-size:11px;
-                        font-weight:400;
-                    }
-                `}
-            </style>
         </>
     );
 };

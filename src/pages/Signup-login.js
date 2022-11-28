@@ -7,7 +7,7 @@ const SignupLogin = () => {
     const [mode, setMode] = useState('signup');
 
     return (
-        <div className="h-full bg-gradient-to-br from-primaryLight to-secondaryLight">
+        <div className="h-full bg-white">
             <div className="h-full flex flex-col">
                 <div className="flex-grow pt-14 px-4 xs:px-10">
                     {mode === 'login' && <Login />}
