@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { useEffect, useState } from 'react'
 import { toast } from 'react-toastify';
 import Checkbox from '../../components/forms/checkbox/Checkbox';
@@ -53,7 +52,7 @@ const Signup = () => {
 
     return (
         <>
-            <p className='text-xl text-white font-bold text-center mb-10'>ثبت نام</p>
+            <p className='text-xl text-body font-bold text-center mb-6'>ثبت نام</p>
             <div className='mb-4'>
                 <Input
                     value={infoSignup.username}
