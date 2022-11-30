@@ -43,7 +43,7 @@ const Signup = () => {
             console.log(res);
             toast.success(res?.message)
             setLoading(false)
-            setInfoSignup({firstName:'',lastName:'', username: '', password: '', confirmPassword: '', gender: '' })
+            setInfoSignup({ firstName: '', lastName: '', username: '', password: '', confirmPassword: '', gender: '' })
         }).catch(err => {
             toast.error(err?.response?.data?.message)
             setLoading(false)
@@ -58,6 +58,7 @@ const Signup = () => {
                     value={infoSignup.username}
                     iconName="user"
                     placeholder="نام کاربری"
+                    rule="required"
                     onChange={(e => setInfoSignup({ ...infoSignup, username: e.target.value }))}
                 />
             </div>
@@ -66,12 +67,14 @@ const Signup = () => {
                     value={infoSignup.firstName}
                     iconName="user"
                     placeholder="نام"
+                    rule="required"
                     onChange={(e => setInfoSignup({ ...infoSignup, firstName: e.target.value }))}
                 />
                 <Input
                     value={infoSignup.lastName}
                     iconName="user"
                     placeholder="نام خانوادگی"
+                    rule="required"
                     onChange={(e => setInfoSignup({ ...infoSignup, lastName: e.target.value }))}
                 />
             </div>

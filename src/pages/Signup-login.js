@@ -4,7 +4,7 @@ import Signup from "../containers/signup/Signup";
 
 const SignupLogin = () => {
 
-    const [mode, setMode] = useState('login');
+    const [mode, setMode] = useState('signup');
 
     return (
         <div className="h-full bg-primary bg-[url('./assets/images/cover.png')] bg-[length:90%] bg-no-repeat bg-[center_top_30px]">

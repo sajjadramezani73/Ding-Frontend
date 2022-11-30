@@ -17,6 +17,7 @@ const Login = () => {
           value={infoLogin.username}
           iconName="user"
           placeholder="نام کاربری"
+          rule="required"
           onChange={(e => setInfoLogin({ ...infoLogin, username: e.target.value }))}
         />
       </div>
@@ -26,6 +27,7 @@ const Login = () => {
           value={infoLogin.password}
           iconName="lock"
           placeholder="رمز عبور"
+          rule="required"
           onChange={(e => setInfoLogin({ ...infoLogin, password: e.target.value }))}
         />
       </div>

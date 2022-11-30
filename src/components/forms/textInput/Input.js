@@ -1,5 +1,6 @@
 
 import { useEffect, useState } from 'react';
+import useValidation from '../../../hooks/useValidation';
 import LoadSvgIcon from '../../../utils/LoadSvgIcon'
 
 const Input = ({
@@ -12,12 +13,19 @@ const Input = ({
     attributes = {},
 }) => {
 
-    const [focused, setFocused] = useState(false);
+    const { validate } = useValidation()
+
     const [inputValue, setInputValue] = useState('')
+    const [validInput, setValidInput] = useState(null);
 
     useEffect(() => {
         setInputValue(value)
     }, [value])
+
+    useEffect(() => {
+        inputValue === '' && setValidInput(null)
+    }, [inputValue])
+
 
     const onChangeHandler = (val) => {
         onChange({
@@ -27,10 +35,16 @@ const Input = ({
         })
     }
 
+    const validHandler = () => {
+        const valid = validate({ rule: rule, value: inputValue })
+        setValidInput(valid.isValid)
+    }
+
     return (
         <>
-            <div className={`flex items-center border border-captionLight h-10 rounded-md bg-white`}>
-                <div className='w-10 h-full flex justify-center items-center'>
+            <div className={`flex items-center border border-captionLight h-10 rounded-md 
+            ${validInput ? 'bg-gray-100' : 'bg-white'}`}>
+                <div className='w-10 min-w-[40px] h-full flex justify-center items-center'>
                     <LoadSvgIcon name={iconName} size="16" weight={1.5} color="var(--color-captionLight)" />
                 </div>
                 <div className='flex-grow h-full relative'>
@@ -38,17 +52,18 @@ const Input = ({
                         type={type}
                         value={inputValue}
                         onChange={e => onChangeHandler(e.target.value)}
-                        onFocus={() => setFocused(true)}
-                        onBlur={() => setFocused(false)}
+                        onBlur={validHandler}
                         className="w-full h-full outline-none bg-transparent text-xxs text-body font-bold placeholder:text-captionLight placeholder:text-[11px] componentinput"
                         placeholder={placeholder}
                         {...attributes} />
                 </div>
-                <div className="w-10 min-w-[40px] h-full flex items-center justify-center">
-                    <span className=''>
-                        <LoadSvgIcon name="check" size={18} weight={1.5} color="var(--color-primary)" />
-                    </span>
-                </div>
+                {validInput && (
+                    <div className="w-10 min-w-[40px] h-full flex items-center justify-center">
+                        <span className=''>
+                            <LoadSvgIcon name="check" size={18} weight={1.5} color="var(--color-primary)" />
+                        </span>
+                    </div>
+                )}
             </div>
         </>
     );
