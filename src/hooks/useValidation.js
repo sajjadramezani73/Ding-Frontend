@@ -21,8 +21,6 @@ const useValidation = () => {
 
     const validate = ({ rule, value }) => {
 
-        console.log(rule, value)
-
         switch (rule) {
             case 'mobile':
                 if (value.isMobile()) {
