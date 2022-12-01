@@ -3,9 +3,11 @@ import Header from '../containers/header/Header'
 
 const Home = () => {
     return (
-        <div>
+        <div className='h-full flex flex-col'>
             <Header />
-            <Outlet />
+            <div className="flex-grow">
+                <Outlet />
+            </div>
         </div>
     )
 }

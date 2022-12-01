@@ -194,15 +194,30 @@ const LoadSvgIcon = ({ name, size = 24, color = '#6C6C6C', weight = 1, fill = "n
             //                 strokeLinejoin="round" />
             //         </svg>
             //     )
-            // case 'chevronLeft':
-            //     return (
-            //         <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill={fill}>
-            //             <path d="M12.5 15L7.5 10L12.5 5" stroke={color}
-            //                 strokeWidth={weight}
-            //                 strokeLinecap="square"
-            //                 strokeLinejoin="round" />
-            //         </svg>
-            //     )
+            case 'chevronLeft':
+                return (
+                    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M15 18L9 12L15 6"
+                            stroke={color}
+                            strokeWidth={weight}
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        />
+                    </svg>
+                )
+            case 'chevronRight':
+                return (
+                    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M9 18L15 12L9 6"
+                            stroke={color}
+                            strokeWidth={weight}
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                        />
+                    </svg>
+                )
             // case 'close-circle':
             //     return (
             //         <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -255,29 +270,27 @@ const LoadSvgIcon = ({ name, size = 24, color = '#6C6C6C', weight = 1, fill = "n
             case 'hamberger':
                 return (
                     <svg width={size} height={size} viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g clip-path="url(#clip0_54_548)">
-                            <path
-                                d="M4.16663 6.25H20.8333"
-                                stroke={color}
-                                strokeWidth={weight}
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                            />
-                            <path
-                                d="M10.4166 12.5H20.8333"
-                                stroke={color}
-                                strokeWidth={weight}
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                            />
-                            <path
-                                d="M6.25 18.75H20.8333"
-                                stroke={color}
-                                strokeWidth={weight}
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                            />
-                        </g>
+                        <path
+                            d="M4.16663 6.25H20.8333"
+                            stroke={color}
+                            strokeWidth={weight}
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                        />
+                        <path
+                            d="M10.4166 12.5H20.8333"
+                            stroke={color}
+                            strokeWidth={weight}
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                        />
+                        <path
+                            d="M6.25 18.75H20.8333"
+                            stroke={color}
+                            strokeWidth={weight}
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                        />
                     </svg>
 
                 )
