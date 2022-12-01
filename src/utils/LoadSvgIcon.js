@@ -252,29 +252,35 @@ const LoadSvgIcon = ({ name, size = 24, color = '#6C6C6C', weight = 1, fill = "n
             //             />
             //         </svg>
             //     )
-            // case 'hamberger':
-            //     return (
-            //         <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            //             <path
-            //                 d="M2 6H22"
-            //                 stroke={color}
-            //                 strokeLinecap="round"
-            //                 strokeLinejoin="round"
-            //             />
-            //             <path
-            //                 d="M2 12H22"
-            //                 stroke={color}
-            //                 strokeLinecap="round"
-            //                 strokeLinejoin="round"
-            //             />
-            //             <path
-            //                 d="M2 18H22"
-            //                 stroke={color}
-            //                 strokeLinecap="round"
-            //                 strokeLinejoin="round"
-            //             />
-            //         </svg>
-            //     )
+            case 'hamberger':
+                return (
+                    <svg width={size} height={size} viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_54_548)">
+                            <path
+                                d="M4.16663 6.25H20.8333"
+                                stroke={color}
+                                strokeWidth={weight}
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                            />
+                            <path
+                                d="M10.4166 12.5H20.8333"
+                                stroke={color}
+                                strokeWidth={weight}
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                            />
+                            <path
+                                d="M6.25 18.75H20.8333"
+                                stroke={color}
+                                strokeWidth={weight}
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                            />
+                        </g>
+                    </svg>
+
+                )
             // case 'search':
             //     return (
             //         <svg width={size} height={size} viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
