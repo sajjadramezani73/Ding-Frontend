@@ -1,10 +1,18 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import LoadSvgIcon from '../../utils/LoadSvgIcon'
 import Sidebar from '../sidebar/Sidebar'
+import { useLocation } from 'react-router-dom'
 
 const Header = () => {
 
+    let location = useLocation();
+
     const [showSidebar, setShowSidebar] = useState(false);
+
+    useEffect(() => {
+        showSidebar === true && setShowSidebar(false)
+    }, [location.pathname])
+
 
     return (
         <div className='h-14 bg-primary grid grid-cols-3 items-center px-4'>

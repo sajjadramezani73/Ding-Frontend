@@ -1,5 +1,4 @@
 import ModalRoot from '../../components/modals/Modal-root'
-import logo from '../../assets/images/logo.png'
 import SidebarLinks from './components/SidebarLinks'
 import { useSelector } from 'react-redux';
 import { baseUrl } from '../../constant';
