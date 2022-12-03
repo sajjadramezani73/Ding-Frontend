@@ -11,7 +11,7 @@ const Splash = () => {
     const navigate = useNavigate()
 
     const getIndexHandler = () => {
-        getIndex('/api/application/index')
+        getIndex()
             .then(res => {
                 res.user !== null ? dispatch(addUser(res.user)) : dispatch(addUser(null))
                 res.userValid === true ? navigate('/home') : navigate('/signup-login')

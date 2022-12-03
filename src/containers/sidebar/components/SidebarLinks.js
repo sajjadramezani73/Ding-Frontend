@@ -5,6 +5,11 @@ const SidebarLinks = () => {
 
     const [links] = useState([
         {
+            title: 'اطلاعات حساب کاربری',
+            icon: 'user',
+            href: 'profile'
+        },
+        {
             title: 'گزارش',
             icon: 'chart',
             href: 'report'
