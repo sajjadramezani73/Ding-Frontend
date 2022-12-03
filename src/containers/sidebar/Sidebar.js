@@ -1,5 +1,5 @@
-import React from 'react'
 import ModalRoot from '../../components/modals/Modal-root'
+import logo from '../../assets/images/logo.png'
 
 const Sidebar = ({ show, setShow }) => {
     return (
@@ -8,7 +8,20 @@ const Sidebar = ({ show, setShow }) => {
             ${show ? 'opacity-100 visible' : 'opacity-0 invisible delay-300'}`}
                 onClick={(e) => (e.target === e.currentTarget && setShow(false))}>
                 <div className={`bg-white h-full w-4/5 max-w-[320px]  duration-300 sidebar 
-                ${show ? 'translate-x-0 delay-200' : 'translate-x-full'}`}></div>
+                ${show ? 'translate-x-0 delay-200' : 'translate-x-full'}`}>
+                    <div className="h-full">
+                        <div className="h-28 bg-primary flex flex-col justify-center items-center">
+                            <img src={logo} alt="logo" className='w-28' />
+                            <p className='text-xl font-bold text-white'>Ding</p>
+                        </div>
+                        <div className="p-4">
+                            <div>links</div>
+                            <div className='px-10'>
+                                <button className='w-full h-10 rounded-lg bg-primary text-white text-sm'>خروج</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </ModalRoot>
     )
