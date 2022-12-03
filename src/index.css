@@ -145,13 +145,3 @@ button:disabled {
   font-family: iranyekan !important;
   font-size: 14px;
 }
-
-.overlay{
-  display: none;
-  visibility: hidden;
-  transition: all 3s;
-}
-.overlay.active {
-  display: block;
-  visibility: visible;
-}
