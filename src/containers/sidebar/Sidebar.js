@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { baseUrl } from '../../constant';
 import manAvatar from '../../assets/images/man.svg';
 import womanAvatar from '../../assets/images/woman.svg'
+import Button from '../../components/ui/button/Button';
 
 const Sidebar = ({ show, setShow }) => {
 
@@ -35,7 +36,13 @@ const Sidebar = ({ show, setShow }) => {
                                 <SidebarLinks />
                             </div>
                             <div className='px-10'>
-                                <button className='w-full h-10 rounded-lg bg-primary text-white text-sm'>خروج</button>
+                                {/* <button className='w-full h-10 rounded-lg bg-primary text-white text-sm'>خروج</button> */}
+                                <Button
+                                    title="خروج"
+                                    // disabled={true}
+                                    // loading={true}
+                                    onClick={() => console.log('log out')}
+                                />
                             </div>
                         </div>
                     </div>

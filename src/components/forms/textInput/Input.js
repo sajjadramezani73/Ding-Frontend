@@ -10,6 +10,7 @@ const Input = ({
     rule = "",
     value = "",
     onChange,
+    disabled=false,
     attributes = {},
 }) => {
 
@@ -43,6 +44,7 @@ const Input = ({
     return (
         <>
             <div className={`flex items-center border border-captionLight h-10 rounded-md 
+            ${disabled && 'opacity-60 bg-gray-50'}
             ${validInput ? 'bg-gray-100' : 'bg-white'}`}>
                 <div className='w-10 min-w-[40px] h-full flex justify-center items-center'>
                     <LoadSvgIcon name={iconName} size="16" weight={1.5} color="var(--color-captionLight)" />
@@ -55,7 +57,9 @@ const Input = ({
                         onBlur={validHandler}
                         className="w-full h-full outline-none bg-transparent text-xxs text-body font-bold placeholder:text-captionLight placeholder:text-[11px] componentinput"
                         placeholder={placeholder}
-                        {...attributes} />
+                        disabled={disabled}
+                        {...attributes}
+                    />
                 </div>
                 {validInput && (
                     <div className="w-10 min-w-[40px] h-full flex items-center justify-center">
