@@ -1,5 +1,6 @@
 import ModalRoot from '../../components/modals/Modal-root'
 import logo from '../../assets/images/logo.png'
+import SidebarLinks from './components/SidebarLinks'
 
 const Sidebar = ({ show, setShow }) => {
     return (
@@ -15,7 +16,9 @@ const Sidebar = ({ show, setShow }) => {
                             <p className='text-xl font-bold text-white'>Ding</p>
                         </div>
                         <div className="p-4">
-                            <div>links</div>
+                            <div className='border-b mb-4'>
+                                <SidebarLinks />
+                            </div>
                             <div className='px-10'>
                                 <button className='w-full h-10 rounded-lg bg-primary text-white text-sm'>خروج</button>
                             </div>
