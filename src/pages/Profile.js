@@ -1,16 +1,22 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
 import Checkbox from '../components/forms/checkbox/Checkbox';
 import Input from '../components/forms/textInput/Input'
 import Button from '../components/ui/button/Button';
 import { baseUrl } from '../constant/index'
+import { updateUser } from '../services/queries';
 import LoadSvgIcon from '../utils/LoadSvgIcon';
+import { addUser } from '../store/userSlice'
 
 const Profile = () => {
 
+    const dispatch = useDispatch()
     const { user } = useSelector(store => store.user);
     const inputRef = useRef()
 
+    const [loading, setLoading] = useState(false);
+    const [disabled, setDisabled] = useState(true);
     const [userInfo, setUserInfo] = useState(null);
     const [genders] = useState([
         { value: 'male', title: 'مرد' },
@@ -22,6 +28,11 @@ const Profile = () => {
     useEffect(() => {
         setUserInfo(user)
     }, [user])
+
+    useEffect(() => {
+        userInfo?.firstName === '' || userInfo?.lastName === '' ? setDisabled(true) : setDisabled(false)
+    }, [userInfo])
+
 
     // select file of computer for send to api
     const selectFileHandler = (e) => {
@@ -43,8 +54,29 @@ const Profile = () => {
         }
     };
 
-    console.log('userInfo', userInfo)
+    //edit information with send id user and other info
+    const editUserInfoHandler = () => {
+        setLoading(true)
 
+        const formData = new FormData()
+        formData.append("id", userInfo?._id)
+        formData.append("firstName", userInfo?.firstName)
+        formData.append("lastName", userInfo?.lastName)
+        formData.append("gender", userInfo?.gender)
+        if (selectedFile) {
+            formData.append("avatar", selectedFile)
+        }
+
+        updateUser(formData)
+            .then(res => {
+                toast.success(res?.message)
+                dispatch(addUser(res.user))
+                setLoading(false)
+            }).catch(err => {
+                toast.danger('خطا در برقراری ارتباط. مجددا تلاش کنید')
+                setLoading(false)
+            })
+    }
 
     return (
         <div className='h-full bg-white flex flex-col justify-between p-4'>
@@ -133,9 +165,9 @@ const Profile = () => {
             <div className="">
                 <Button
                     title="ویرایش"
-                    // disabled={true}
-                    // loading={true}
-                    onClick={() => console.log('first')}
+                    disabled={disabled}
+                    loading={loading}
+                    onClick={() => editUserInfoHandler()}
                 />
             </div>
         </div>
