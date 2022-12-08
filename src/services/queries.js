@@ -19,3 +19,8 @@ export const updateUser = async (params) => {
     const res = await service.post(`/api/users/update`, params);
     return res?.data;
 }
+
+export const getComments = async () => {
+    const res = await service.get('/api/comments');
+    return res?.data;
+}
