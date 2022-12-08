@@ -20,6 +20,11 @@ const SidebarLinks = () => {
             href: 'about'
         },
         {
+            title: 'نظرسنجی',
+            icon: 'commentFill',
+            href: 'comments'
+        },
+        {
             title: 'تنظیمات',
             icon: 'setting',
             href: 'setting'

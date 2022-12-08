@@ -6,6 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Home from '../../pages/Home';
 import RequestRegistration from '../../pages/Request-registration';
 import Profile from '../../pages/Profile';
+import Comments from '../../pages/Comments';
 
 const Layout = () => {
     return (
@@ -15,6 +16,7 @@ const Layout = () => {
                 <Route path="/home" element={<Home />} >
                     <Route index element={<RequestRegistration />} />
                     <Route path="profile/:userId" element={<Profile />} />
+                    <Route path="comments" element={<Comments />} />
                 </Route>
                 <Route path="/signup-login" element={<SignupLogin />} />
             </Routes>

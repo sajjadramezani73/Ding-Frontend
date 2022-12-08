@@ -14,6 +14,8 @@ const customColors = {
   danger: '#FF3B3B',
   light: '#F9F9F9',
   body: '#181818',
+  titr: '#424242',
+  yellowCu: '#FFBF00'
 }
 
 module.exports = {
@@ -52,7 +54,8 @@ module.exports = {
     },
     extend: {
       boxShadow: {
-        'card': '0px 0px 10px rgba(90, 75, 75, 0.1), 0px 1px 1px rgba(90, 75, 75, 0.03), 0px 2px 3px rgba(90, 75, 75, 0.04)',
+        card: '0px 0px 10px rgba(90, 75, 75, 0.1), 0px 1px 1px rgba(90, 75, 75, 0.03), 0px 2px 3px rgba(90, 75, 75, 0.04)',
+        top: '0 -4px 6px -1px rgb(0 0 0/0.1),0 2px 4px -2px rgb(0 0 0/0.1)',
       },
     },
   },
