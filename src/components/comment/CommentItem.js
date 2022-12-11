@@ -1,43 +1,50 @@
-import React from 'react'
-import LoadSvgIcon from '../../utils/LoadSvgIcon'
+import { baseUrl } from '../../constant';
 import CommentRating from './CommentRating'
+import manAvatar from '../../assets/images/man.svg';
+import womanAvatar from '../../assets/images/woman.svg'
+import moment from 'jalali-moment';
 
 const CommentItem = ({ comment }) => {
+
+    // set Avater user or static avater
+    const avatar = (user) => {
+        if (user?.avatar !== '') {
+            return baseUrl + '/' + user?.avatar
+        } else {
+            return user?.gender === "male" ? manAvatar : womanAvatar
+        }
+    }
+
+    // split time and date of created_at
+    const splitDate = (data) => {
+        const time = data.split(' ')
+        return time
+    }
+
+    // convert number month to text month
+    const changeDateToText = (date) => {
+        let m = moment.from(date, 'fa', 'YYYY/MM/DD')
+        return m.locale('fa').format('D MMMM YYYY')
+    }
+
     return (
         <li className='py-4 border-b'>
             <div className="flex items-center">
                 <div className="w-7 h-7 flex justify-center items-center overflow-hidden border rounded-full">
-                    {comment?.user == null ? (
-                        <span className='pt-1.5'>
-                            <LoadSvgIcon name="user" size={25} weight="0.5" />
-                        </span>
-                    ) : (
-                        comment?.user?.avatar !== '' ? (
-                            <img src={comment?.user?.avatar} className='w-full h-full rounded-full object-cover' alt="" />
-                        ) : (
-                            <span className='pt-1.5'>
-                                <LoadSvgIcon name="user" size={25} weight="0.5" />
-                            </span>
-                        )
-                    )}
+                    <img src={avatar(comment?.user)} className='w-full h-full rounded-full object-cover' alt="" />
                 </div>
-                <p className='text-captionDark text-xs font-bold mr-2 pt-0.5'>
-                    {comment?.user == null ? (
-                        'کاربر ناشناس'
-                    ) : (
-                        comment?.user?.firstName + ' ' + comment?.user?.lastName
-                    )}
+                <p className='text-captionDark text-xs font-bold mr-2'>
+                    {comment?.user?.firstName + ' ' + comment?.user?.lastName}
                 </p>
             </div>
             <div className="flex items-center pt-2">
                 <CommentRating score={comment.score} />
                 <p className='text-caption text-[10px] font-medium mr-4 pt-0.5'>
-                    {/* {changeDateToText(splitDate(comment.created_at)[0])} */}
-                    17 آذر 1401
+                    {changeDateToText(splitDate(comment.created_at)[0])}
                 </p>
             </div>
             <div className='pt-4'>
-                <p className='text-caption text-xs font-medium text-justify'>{comment.description}</p>
+                <p className='text-caption text-xxs font-medium text-justify'>{comment.comment}</p>
             </div>
         </li>
     )
