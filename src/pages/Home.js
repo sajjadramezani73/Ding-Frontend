@@ -28,7 +28,7 @@ const Home = () => {
     return (
         <div className='h-full flex flex-col'>
             <Header />
-            <div className="flex-grow">
+            <div className="flex-grow overflow-hidden">
                 <Outlet />
             </div>
         </div>
