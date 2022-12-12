@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import CommentItem from '../components/comment/CommentItem';
 import CommentItemShimmer from '../components/comment/CommentItemShimmer';
 import Button from '../components/ui/button/Button';
 import { getComments } from '../services/queries';
 
 const Comments = () => {
+
+    const { user } = useSelector(store => store.user);
 
     const [comments, setComments] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -46,12 +50,11 @@ const Comments = () => {
                         )}
                     </ul>
                     <div className="flex justify-center bg-white w-full py-4 px-4 shadow-top">
-                        <Button
-                            title="افزودن نظر"
-                        // disabled={disabled}
-                        // loading={loading}
-                        // onClick={() => editUserInfoHandler()}
-                        />
+                        <Link to={`/home/add-comment/${user?._id}`} className='w-full'>
+                            <Button
+                                title="افزودن نظر"
+                            />
+                        </Link>
                     </div>
                 </>
             )}

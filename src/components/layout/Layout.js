@@ -7,6 +7,7 @@ import Home from '../../pages/Home';
 import RequestRegistration from '../../pages/Request-registration';
 import Profile from '../../pages/Profile';
 import Comments from '../../pages/Comments';
+import AddComment from '../../pages/AddComment';
 
 const Layout = () => {
     return (
@@ -17,6 +18,7 @@ const Layout = () => {
                     <Route index element={<RequestRegistration />} />
                     <Route path="profile/:userId" element={<Profile />} />
                     <Route path="comments" element={<Comments />} />
+                    <Route path="add-comment/:userId" element={<AddComment />} />
                 </Route>
                 <Route path="/signup-login" element={<SignupLogin />} />
             </Routes>
