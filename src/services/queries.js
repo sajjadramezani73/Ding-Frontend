@@ -24,3 +24,8 @@ export const getComments = async () => {
     const res = await service.get('/api/comments');
     return res?.data;
 }
+
+export const sentComment = async (params) => {
+    const res = await service.post('/api/comments/add-comment', params);
+    return res?.data;
+}
