@@ -9,7 +9,6 @@ import Button from '../../components/ui/button/Button';
 const Sidebar = ({ show, setShow }) => {
 
     const { user } = useSelector(store => store.user);
-    console.log(user)
 
     const avatar = (user) => {
         if (user?.avatar !== '') {

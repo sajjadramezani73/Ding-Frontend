@@ -50,7 +50,7 @@ const Comments = () => {
                         )}
                     </ul>
                     <div className="flex justify-center bg-white w-full py-4 px-4 shadow-top">
-                        <Link to={`/home/add-comment/${user?._id}`} className='w-full'>
+                        <Link to={`/home/add-comment/${user?._id}?title=ارسال نظر`} className='w-full'>
                             <Button
                                 title="افزودن نظر"
                             />

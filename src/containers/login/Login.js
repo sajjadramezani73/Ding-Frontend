@@ -39,7 +39,7 @@ const Login = () => {
       setLoading(false)
       Cookies.set('token', res?.token)
       toast.success(res?.message)
-      navigate('/home')
+      navigate('/home?title=ثبت ورود و خروج')
     }).catch(err => {
       toast.error(err?.response?.data?.message)
       setLoading(false)

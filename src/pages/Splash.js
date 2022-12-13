@@ -14,7 +14,7 @@ const Splash = () => {
         getIndex()
             .then(res => {
                 res.user !== null ? dispatch(addUser(res.user)) : dispatch(addUser(null))
-                res.userValid === true ? navigate('/home') : navigate('/signup-login')
+                res.userValid === true ? navigate('/home?title=ثبت ورود و خروج') : navigate('/signup-login')
             })
             .catch(err => console.log(err))
     }
