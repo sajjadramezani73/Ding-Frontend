@@ -145,3 +145,8 @@ button:disabled {
   font-family: iranyekan !important;
   font-size: 14px;
 }
+
+.leaflet-div-icon {
+  border: none !important;
+  background: transparent !important;
+}

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import StaticMap from "../components/map/StaticMap";
 import LoadSvgIcon from "../utils/LoadSvgIcon";
 
 const RequestRegistration = () => {
@@ -16,7 +17,7 @@ const RequestRegistration = () => {
                     {tabs.map(tab => {
                         const active = tab.id === mode
                         return (
-                            <div className={`w-1/2 flex justify-center items-center 
+                            <div className={`w-1/2 flex justify-center items-center cursor-pointer
                             ${active && 'bg-captionDark'}`}
                                 onClick={() => setMode(tab.id)}
                                 key={tab.id}>
@@ -25,7 +26,17 @@ const RequestRegistration = () => {
                         )
                     })}
                 </div>
-                <div className="h-[400px] border flex justify-center items-center">map and device</div>
+                <div className="h-[400px] flex justify-center items-center">
+                    <StaticMap
+                        zoom={14}
+                        position={{
+                            lat: 36.232743,
+                            lng: 59.609234
+                        }}
+                        width="100%"
+                        height="100%"
+                    />
+                </div>
             </div>
             <div className="px-4 pb-4">
                 <div className="h-10 bg-captionLight rounded-full flex justify-end mb-2">
