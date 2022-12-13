@@ -45,7 +45,7 @@ const Comments = () => {
                             })
                         ) : (
                             <li className="text-center text-primary text-sm mt-10">
-                                {/* {comments?.data?.user_message} */}
+                                متاسفانه نظری برای نمایش وجود ندارد!
                             </li>
                         )}
                     </ul>
