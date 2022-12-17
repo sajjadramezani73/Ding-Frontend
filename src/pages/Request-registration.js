@@ -1,5 +1,6 @@
 import { useState } from "react";
-import StaticMap from "../components/map/StaticMap";
+import DeviceContainer from "../containers/deviceContainer/DeviceContainer";
+import MapContainer from "../containers/mapContainer/MapContainer";
 import LoadSvgIcon from "../utils/LoadSvgIcon";
 
 const RequestRegistration = () => {
@@ -26,16 +27,9 @@ const RequestRegistration = () => {
                         )
                     })}
                 </div>
-                <div className="h-[400px] flex justify-center items-center">
-                    <StaticMap
-                        zoom={14}
-                        position={{
-                            lat: 36.232743,
-                            lng: 59.609234
-                        }}
-                        width="100%"
-                        height="100%"
-                    />
+                <div className="h-[400px] flex justify-center items-center border-b-4 border-primary">
+                    {mode === 'device' && <DeviceContainer />}
+                    {mode === 'location' && <MapContainer />}
                 </div>
             </div>
             <div className="px-4 pb-4">
