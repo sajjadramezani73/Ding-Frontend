@@ -26,6 +26,8 @@ const Map = ({ zoom = 18, width, height, position, getLatLng, getPosition }) => 
         const map = useMapEvents({
             drag() {
                 setLatLng({ ...map.getCenter(), zoom: map.getZoom() })
+            },
+            dragend() {
                 getLatLng({ ...map.getCenter(), zoom: map.getZoom() })
             },
         })

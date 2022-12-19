@@ -3,7 +3,7 @@ import { useState } from "react";
 const useGetUserLocation = () => {
 
     const [loading, setLoading] = useState(true);
-    const [latlng, setLatLng] = useState({ lat: 35.688180, lng: 51.392918 });
+    const [latlng, setLatLng] = useState({ lat: 35.688180, lng: 51.392918, zoom: 14 });
 
     const getPosition = async () => {
         if (navigator.geolocation) {
@@ -53,6 +53,7 @@ const useGetUserLocation = () => {
         loading,
         setLoading,
         getPosition,
+        setLatLng,
         locationData: latlng,
     };
 };
