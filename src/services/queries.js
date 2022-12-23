@@ -29,3 +29,8 @@ export const sentComment = async (params) => {
     const res = await service.post('/api/comments/add-comment', params);
     return res?.data;
 }
+
+export const sentRequest = async (params) => {
+    const res = await service.post('/api/entry-and-exit/save-entry-and-exit', params);
+    return res?.data;
+}

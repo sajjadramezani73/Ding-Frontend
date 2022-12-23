@@ -1,7 +1,7 @@
 import { useState } from "react";
 import DeviceContainer from "../containers/deviceContainer/DeviceContainer";
 import MapContainer from "../containers/mapContainer/MapContainer";
-import LoadSvgIcon from "../utils/LoadSvgIcon";
+import RequestRegistrationBtn from "../containers/request-registration-btn/Request-registration-btn";
 
 const RequestRegistration = () => {
 
@@ -33,18 +33,7 @@ const RequestRegistration = () => {
                 </div>
             </div>
             <div className="px-4 pb-4">
-                <div className="h-10 bg-captionLight rounded-full flex justify-end mb-2">
-                    <button className="flex items-center text-sm bg-primary text-white rounded-full h-full px-4">
-                        <LoadSvgIcon name="chevronRight" size={20} weight={1.5} color="#FFFFFF" />
-                        ورود
-                    </button>
-                </div>
-                <div className="h-10 bg-captionLight rounded-full flex">
-                    <button className="flex items-center text-sm bg-primary text-white rounded-full h-full px-4">
-                        خروج
-                        <LoadSvgIcon name="chevronLeft" size={20} weight={1.5} color="#FFFFFF" />
-                    </button>
-                </div>
+                <RequestRegistrationBtn />
             </div>
         </div>
     )
