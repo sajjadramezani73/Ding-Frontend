@@ -32,7 +32,7 @@ const RequestRegistration = () => {
                     {mode === 'location' && <MapContainer />}
                 </div>
             </div>
-            <div className="px-4 pb-4">
+            <div className="px-4 pb-4 grid">
                 <RequestRegistrationBtn />
             </div>
         </div>

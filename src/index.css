@@ -150,3 +150,36 @@ button:disabled {
   border: none !important;
   background: transparent !important;
 }
+
+/****** swipe button*********/
+
+.styles_ReactSwipeButton__2WML2 {
+  height: 40px !important;
+}
+
+.styles_rsbContainer__KXpXK {
+  background: var(--color-captionLight) !important;
+}
+
+.styles_rsbcSlider__1yYxD {
+  height: 40px !important;
+}
+
+.styles_rsbcSliderText__3h08j {
+  height: 40px !important;
+  line-height: 40px !important;
+  font-family: iranyekan !important;
+}
+
+.styles_rsbcSliderCircle__3G0Zs {
+  height: 40px !important;
+  width: 70px !important;
+}
+
+.styles_rsbcText__16wA0 {
+  height: 40px !important;
+  line-height: 40px !important;
+  font-family: iranyekan !important;
+}
+
+/****** swipe button*********/
