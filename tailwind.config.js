@@ -15,7 +15,8 @@ const customColors = {
   light: '#F9F9F9',
   body: '#181818',
   titr: '#424242',
-  yellowCu: '#FFBF00'
+  yellowCu: '#FFBF00',
+  greenCu: '#22c55e'
 }
 
 module.exports = {

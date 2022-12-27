@@ -1,8 +1,9 @@
-import React, { useRef, useState } from 'react'
+import React, { useState } from 'react'
 import { useSelector } from 'react-redux';
 import { sentRequest } from '../../services/queries';
-import { toast } from 'react-toastify';
 import LoadSvgIcon from '../../utils/LoadSvgIcon';
+import FullModal from '../../components/modals/FullModal';
+import Button from '../../components/ui/button/Button';
 
 const RequestRegistrationBtn = () => {
 
@@ -40,20 +41,35 @@ const RequestRegistrationBtn = () => {
     console.log(user)
     console.log(map)
 
+    const [resultModal, setResultModal] = useState(false);
+    const [loading, setLoading] = useState(false);
+    const [result, setResult] = useState({
+        success: null,
+        message: ''
+    });
+
     const sendRequestHandler = (mode) => {
-        console.log(mode)
+        setLoading(true)
+        setResultModal(true)
         sentRequest({ creator: user?._id, mode: mode, ...map })
             .then(res => {
-                console.log(res);
-                toast.success(res?.message)
+                setResult({
+                    success: res?.success,
+                    message: res?.message
+                })
+                setLoading(false)
             }).catch(err => {
-                console.log(err?.response?.data)
-                toast.error(err?.response?.data?.message ? err?.response?.data?.message : 'متاسفانه خطایی رخ داده است!')
+                setResult({
+                    success: err?.response?.data?.success,
+                    message: err?.response?.data?.message ? err?.response?.data?.message : 'متاسفانه خطایی رخ داده است!'
+                })
+                setLoading(false)
             })
     }
 
     return (
         <>
+            <button onClick={() => setResultModal(true)} >click</button>
             <div className="h-10 bg-captionLight rounded-full flex justify-end mb-2 relative" >
                 <button
                     className="flex items-center text-sm bg-primary text-white rounded-full h-full px-4 absolute"
@@ -74,6 +90,36 @@ const RequestRegistrationBtn = () => {
                     <LoadSvgIcon name="chevronLeft" size={20} weight={1.5} color="#FFFFFF" />
                 </button>
             </div>
+
+            <FullModal
+                options={{
+                    show: resultModal,
+                    setShow: () => setResultModal(false),
+                }}
+            >
+
+                <div className="p-5 min-h-[164px] bg-white flex justify-center items-center">
+                    {loading ? (
+                        <LoadSvgIcon name="loading" fill="var(--color-caption)" />
+                    ) : (
+                        <div className="flex flex-col items-center">
+                            {result?.success === 1 ? (
+                                <LoadSvgIcon name="resultSuccess" color="var(--color-greenCu)" size={35} />
+                            ) : (
+                                <LoadSvgIcon name="resultDanger" color="var(--color-danger)" size={35} />
+                            )}
+                            <p className='text-sm text-captionDark py-4'>{result?.message}</p>
+                            <div className="">
+                                <Button
+                                    title="متوجه شدم"
+                                    className="h-9 text-xxs px-3"
+                                    onClick={() => setResultModal(false)}
+                                />
+                            </div>
+                        </div>
+                    )}
+                </div>
+            </FullModal>
         </>
     )
 }

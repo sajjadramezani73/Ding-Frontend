@@ -296,29 +296,30 @@ const LoadSvgIcon = ({ name, size = 24, color = '#6C6C6C', weight = 1, fill = "n
             //     )
             case 'info':
                 return (
-                    <svg width={size} height={size} viewBox="0 0 20 20" fill={fill} xmlns="http://www.w3.org/2000/svg">
+                    <svg width={size} height={size} viewBox="0 0 22 22" fill={fill} xmlns="http://www.w3.org/2000/svg">
                         <path
-                            d="M10.0001 18.3337C11.9281 18.3339 13.7965 17.6656 15.2869 16.4426C16.7774 15.2197 17.7978 13.5177 18.1741 11.6268C18.5504 9.73587 18.2594 7.77297 17.3506 6.07256C16.4419 4.37215 14.9717 3.03945 13.1905 2.30153C11.4093 1.56361 9.42739 1.46613 7.58238 2.0257C5.73737 2.58528 4.14348 3.7673 3.07229 5.37033C2.00109 6.97336 1.51891 8.89824 1.70785 10.817C1.89678 12.7357 2.74518 14.5295 4.10846 15.8928C5.67207 17.4539 7.79061 18.3316 10.0001 18.3337V18.3337Z"
+                            d="M10.9998 21C13.3134 21.0003 15.5555 20.1983 17.344 18.7307C19.1326 17.2632 20.3571 15.2209 20.8086 12.9518C21.2602 10.6827 20.911 8.32718 19.8205 6.28669C18.73 4.24619 16.9657 2.64696 14.8283 1.76145C12.6909 0.875941 10.3126 0.75896 8.09856 1.43045C5.88456 2.10195 3.97189 3.52036 2.68645 5.444C1.40102 7.36764 0.822405 9.67749 1.04913 11.98C1.27585 14.2824 2.29392 16.435 3.92986 18.071C5.80619 19.9443 8.34844 20.9975 10.9998 21V21Z"
                             stroke={color}
-                            strokeWidth={weight}
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
+                            stroke-width={weight}
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
                         />
                         <path
-                            d="M10 8.75V14.5833"
+                            d="M11 9.5V16.5"
                             stroke={color}
-                            strokeWidth={weight}
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
+                            stroke-width={weight}
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
                         />
                         <path
-                            d="M10 5.83398V6.66732"
+                            d="M11 6V7"
                             stroke={color}
-                            strokeWidth={weight}
-                            strokemiterlimitt="10"
-                            strokeLinecap="round"
+                            stroke-width={weight}
+                            stroke-miterlimit="10"
+                            stroke-linecap="round"
                         />
                     </svg>
+
                 )
             case 'setting':
                 return (
@@ -443,6 +444,53 @@ const LoadSvgIcon = ({ name, size = 24, color = '#6C6C6C', weight = 1, fill = "n
                             stroke={color}
                             strokeWidth={weight}
                         />
+                    </svg>
+                )
+            case 'resultSuccess':
+                return (
+                    <svg width={size} height={size} viewBox="0 0 59 59" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M57.313 8.06522C56.445 7.19577 55.0367 7.19427 54.1688 8.06153L27.4929 34.6671L17.8682 24.2138C17.0366 23.3111 15.6305 23.2525 14.7263 24.0841C13.8227 24.9157 13.7649 26.3225 14.5965 27.226L25.7888 39.3811C26.1987 39.8266 26.7723 40.0853 27.3772 40.0978C27.3934 40.0985 27.4091 40.0985 27.4246 40.0985C28.0124 40.0985 28.5779 39.8651 28.9945 39.45L57.3086 11.2101C58.1787 10.3429 58.1802 8.93466 57.313 8.06522Z"
+                            fill={color}
+                        />
+                        <path d="M56.7763 27.2763C55.5482 27.2763 54.5528 28.2717 54.5528 29.5C54.5528 43.3146 43.3146 54.5528 29.5 54.5528C15.6862 54.5528 4.44724 43.3146 4.44724 29.5C4.44724 15.6862 15.6862 4.44724 29.5 4.44724C30.7282 4.44724 31.7237 3.45185 31.7237 2.22368C31.7237 0.995395 30.7282 0 29.5 0C13.2335 0 0 13.2335 0 29.5C0 45.7658 13.2335 59 29.5 59C45.7658 59 59 45.7658 59 29.5C59 28.2718 58.0046 27.2763 56.7763 27.2763Z"
+                            fill={color}
+                        />
+                        <clipPath id="clip0_1_13289">
+                            <rect width={size} height={size} fill="white" />
+                        </clipPath>
+                    </svg>
+                )
+            case 'resultDanger':
+                return (
+                    <svg width={size} height={size} viewBox="0 0 59 59" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M56.7763 27.2763C55.5482 27.2763 54.5528 28.2717 54.5528 29.5C54.5528 43.3146 43.3146 54.5528 29.5 54.5528C15.6862 54.5528 4.44724 43.3146 4.44724 29.5C4.44724 15.6862 15.6862 4.44724 29.5 4.44724C30.7282 4.44724 31.7237 3.45185 31.7237 2.22368C31.7237 0.995395 30.7282 0 29.5 0C13.2335 0 0 13.2335 0 29.5C0 45.7658 13.2335 59 29.5 59C45.7658 59 59 45.7658 59 29.5C59 28.2718 58.0046 27.2763 56.7763 27.2763Z"
+                            fill={color}
+                        />
+                        <path
+                            d="M17.5 17.5L42.5 42.5"
+                            stroke={color}
+                            stroke-width="4.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        />
+                        <path
+                            d="M17.5 42.5L42.5 17.5"
+                            stroke={color}
+                            stroke-width="4.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        />
+                        <path
+                            d="M20.5 39.5L45.5 14.5"
+                            stroke={color}
+                            stroke-width="4.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        />
+                        <clipPath id="clip0_1_13342">
+                            <rect width={size} height={size} fill="white" />
+                        </clipPath>
                     </svg>
                 )
             // case 'search':
