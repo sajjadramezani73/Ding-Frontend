@@ -33,7 +33,7 @@ const RequestRegistration = () => {
                 </div>
             </div>
             <div className="px-4 pb-4 grid">
-                <RequestRegistrationBtn />
+                <RequestRegistrationBtn mode={mode} />
             </div>
         </div>
     )

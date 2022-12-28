@@ -5,7 +5,7 @@ import LoadSvgIcon from '../../utils/LoadSvgIcon';
 import FullModal from '../../components/modals/FullModal';
 import Button from '../../components/ui/button/Button';
 
-const RequestRegistrationBtn = () => {
+const RequestRegistrationBtn = ({ mode }) => {
 
     // const btnRef = useRef()
     // console.log(btnRef)
@@ -69,12 +69,13 @@ const RequestRegistrationBtn = () => {
 
     return (
         <>
-            <div className="h-10 bg-captionLight rounded-full flex justify-end mb-2 relative" >
+            <div className="h-10 bg-captionLight rounded-full flex justify-end mb-2 relative" disabled={true}>
                 <button
                     className="flex items-center text-sm bg-primary text-white rounded-full h-full px-4 absolute"
                     // onMouseDown={mouseDownHandler}
                     // onTouchStart={mouseDownHandler}
                     // ref={btnRef}
+                    disabled={mode === 'device'}
                     onClick={() => sendRequestHandler('enter')}
                 >
                     <LoadSvgIcon name="chevronRight" size={20} weight={1.5} color="#FFFFFF" />
@@ -83,6 +84,7 @@ const RequestRegistrationBtn = () => {
             </div>
             <div className="h-10 bg-captionLight rounded-full flex">
                 <button className="flex items-center text-sm bg-primary text-white rounded-full h-full px-4"
+                    disabled={mode === 'device'}
                     onClick={() => sendRequestHandler('exit')}
                 >
                     خروج
