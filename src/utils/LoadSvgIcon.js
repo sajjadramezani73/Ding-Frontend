@@ -300,23 +300,23 @@ const LoadSvgIcon = ({ name, size = 24, color = '#6C6C6C', weight = 1, fill = "n
                         <path
                             d="M10.9998 21C13.3134 21.0003 15.5555 20.1983 17.344 18.7307C19.1326 17.2632 20.3571 15.2209 20.8086 12.9518C21.2602 10.6827 20.911 8.32718 19.8205 6.28669C18.73 4.24619 16.9657 2.64696 14.8283 1.76145C12.6909 0.875941 10.3126 0.75896 8.09856 1.43045C5.88456 2.10195 3.97189 3.52036 2.68645 5.444C1.40102 7.36764 0.822405 9.67749 1.04913 11.98C1.27585 14.2824 2.29392 16.435 3.92986 18.071C5.80619 19.9443 8.34844 20.9975 10.9998 21V21Z"
                             stroke={color}
-                            stroke-width={weight}
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
+                            strokeWidth={weight}
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
                         />
                         <path
                             d="M11 9.5V16.5"
                             stroke={color}
-                            stroke-width={weight}
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
+                            strokeWidth={weight}
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
                         />
                         <path
                             d="M11 6V7"
                             stroke={color}
-                            stroke-width={weight}
-                            stroke-miterlimit="10"
-                            stroke-linecap="round"
+                            strokeWidth={weight}
+                            strokeMiterlimit="10"
+                            strokeLinecap="round"
                         />
                     </svg>
 
@@ -470,23 +470,23 @@ const LoadSvgIcon = ({ name, size = 24, color = '#6C6C6C', weight = 1, fill = "n
                         <path
                             d="M17.5 17.5L42.5 42.5"
                             stroke={color}
-                            stroke-width="4.5"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
+                            strokeWidth="4.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
                         />
                         <path
                             d="M17.5 42.5L42.5 17.5"
                             stroke={color}
-                            stroke-width="4.5"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
+                            strokeWidth="4.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
                         />
                         <path
                             d="M20.5 39.5L45.5 14.5"
                             stroke={color}
-                            stroke-width="4.5"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
+                            strokeWidth="4.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
                         />
                         <clipPath id="clip0_1_13342">
                             <rect width={size} height={size} fill="white" />
