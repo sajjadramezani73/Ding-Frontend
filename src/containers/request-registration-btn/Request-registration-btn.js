@@ -69,7 +69,6 @@ const RequestRegistrationBtn = () => {
 
     return (
         <>
-            <button onClick={() => setResultModal(true)} >click</button>
             <div className="h-10 bg-captionLight rounded-full flex justify-end mb-2 relative" >
                 <button
                     className="flex items-center text-sm bg-primary text-white rounded-full h-full px-4 absolute"

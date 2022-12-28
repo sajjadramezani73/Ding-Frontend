@@ -183,3 +183,26 @@ button:disabled {
 }
 
 /****** swipe button*********/
+
+/****** modal *********/
+@keyframes active {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.confirm-pan {
+  transition-delay: 2s;
+  transform: scale(0);
+  transition: all ease 0.9s;
+}
+
+.confirm-pan.active {
+  animation: active 0.2s forwards;
+}
+
+/****** modal *********/
