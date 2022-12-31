@@ -8,6 +8,7 @@ import RequestRegistration from '../../pages/Request-registration';
 import Profile from '../../pages/Profile';
 import Comments from '../../pages/Comments';
 import AddComment from '../../pages/AddComment';
+import About from '../../pages/About';
 
 const Layout = () => {
     return (
@@ -19,6 +20,7 @@ const Layout = () => {
                     <Route path="profile/:userId" element={<Profile />} />
                     <Route path="comments" element={<Comments />} />
                     <Route path="add-comment/:userId" element={<AddComment />} />
+                    <Route path="about" element={<About />} />
                 </Route>
                 <Route path="/signup-login" element={<SignupLogin />} />
             </Routes>
