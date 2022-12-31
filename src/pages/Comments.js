@@ -40,7 +40,7 @@ const Comments = () => {
                         {comments?.length > 0 ? (
                             comments?.map((comment) => {
                                 return (
-                                    <CommentItem key={comment.id} comment={comment} />
+                                    <CommentItem key={comment._id} comment={comment} />
                                 )
                             })
                         ) : (
