@@ -15,7 +15,7 @@ const SidebarLinks = () => {
             href: 'profile'
         },
         {
-            title: 'گزارش',
+            title: 'گزارش گیری',
             icon: 'chart',
             href: 'report'
         },
