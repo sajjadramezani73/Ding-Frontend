@@ -532,13 +532,13 @@ const LoadSvgIcon = ({ name, size = 24, color = '#6C6C6C', weight = 1, fill = "n
             //             />
             //         </svg>
             //     )
-            // case 'close':
-            //     return (
-            //         <svg width={size} height={size} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            //             <path d="M6 6L18 18" strokeWidth={weight} stroke={color} strokeLinecap="round" strokeLinejoin="round" />
-            //             <path d="M6 18L18 6" strokeWidth={weight} stroke={color} strokeLinecap="round" strokeLinejoin="round" />
-            //         </svg>
-            //     )
+            case 'close':
+                return (
+                    <svg width={size} height={size} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 6L18 18" strokeWidth={weight} stroke={color} strokeLinecap="round" strokeLinejoin="round" />
+                        <path d="M6 18L18 6" strokeWidth={weight} stroke={color} strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                )
             // case 'upArrow':
             //     return (
             //         <svg width={size} height={size} viewBox="0 0 24 24" fill={fill} xmlns="http://www.w3.org/2000/svg">
