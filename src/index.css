@@ -185,13 +185,23 @@ button:disabled {
 /****** swipe button*********/
 
 /****** modal *********/
-@keyframes active {
+@keyframes activeScale {
   0% {
     transform: scale(0);
   }
 
   100% {
     transform: scale(1);
+  }
+}
+
+@keyframes activeFull {
+  0% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateY(0);
   }
 }
 
@@ -202,7 +212,17 @@ button:disabled {
 }
 
 .confirm-pan.active {
-  animation: active 0.2s forwards;
+  animation: activeScale 0.2s forwards;
+}
+
+.full-modal {
+  transition-delay: 2s;
+  transform: translateY(100%);
+  transition: all linear 0.9s;
+}
+
+.full-modal.active {
+  animation: activeFull 0.4s forwards;
 }
 
 /****** modal *********/

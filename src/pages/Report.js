@@ -1,11 +1,15 @@
 import { useState } from 'react'
 import Button from '../components/ui/button/Button'
-import FullModal from '../components/modals/FullModal';
+import ConfirmModal from '../components/modals/ConfirmModal';
 import LoadSvgIcon from '../utils/LoadSvgIcon';
 import DatePicker from '../components/datePicker/DatePicker';
+import FullModal from '../components/modals/FullModal';
 
 const Report = () => {
 
+    const [summaryReportModal, setSummaryReportModal] = useState(false);
+    const [detailedReportModal, setDetailedReportModal] = useState(false);
+    const [titleModal, setTitleModal] = useState('');
     const [showDatePicker, setShowDatePicker] = useState(false);
     const [selectedDate, setSelectedDate] = useState({
         month: null,
@@ -32,11 +36,27 @@ const Report = () => {
                         />
                     </div>
                 </div>
-                <div className="p-4 bg-red-300">
+                <div className="grid grid-cols-2 gap-x-4">
+                    <Button
+                        title="گزارش خلاصه"
+                        onClick={() => {
+                            setSummaryReportModal(true)
+                            setTitleModal('گزارش خلاصه')
+                        }}
+                    />
+                    <Button
+                        title="گزارش تفصیلی"
+                        outline={true}
+                        onClick={() => {
+                            setDetailedReportModal(true)
+                            setTitleModal('گزارش تفصیلی')
+                        }}
+                    />
                 </div>
             </div>
 
-            <FullModal
+            {/* modal for select date */}
+            <ConfirmModal
                 options={{
                     show: showDatePicker,
                     setShow: () => setShowDatePicker(false),
@@ -56,6 +76,23 @@ const Report = () => {
                             selectDate={value => setSelectedDate(value)}
                         />
                     </div>
+                </div>
+            </ConfirmModal>
+
+            {/* modal for show summary report or detailed report */}
+            <FullModal
+                options={{
+                    title: titleModal,
+                    show: summaryReportModal || detailedReportModal,
+                    setShow: () => {
+                        setSummaryReportModal(false)
+                        setDetailedReportModal(false)
+                    },
+                }}
+            >
+                <div className="h-full overflow-hidden overflow-y-auto">
+                    {summaryReportModal && <p>خلاصه گزارش</p>}
+                    {detailedReportModal && <p>گزارش تفصیلی</p>}
                 </div>
             </FullModal>
         </>
