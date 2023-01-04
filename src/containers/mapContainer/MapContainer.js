@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Map from '../../components/map/Map'
-import FullModal from '../../components/modals/FullModal'
+import ConfirmModal from '../../components/modals/ConfirmModal'
 import Button from '../../components/ui/button/Button'
 import useGetUserLocation from '../../hooks/useGetUserLocation'
 import { addMapLocation } from '../../store/mapSlice'
@@ -39,7 +39,7 @@ const MapContainer = () => {
                 />
             </div>
 
-            <FullModal
+            <ConfirmModal
                 options={{
                     show: loading || locationError?.showError,
                     // setShow: () => setResultModal(false),
@@ -61,7 +61,7 @@ const MapContainer = () => {
                         </div>
                     )}
                 </div>
-            </FullModal>
+            </ConfirmModal>
         </>
     )
 }

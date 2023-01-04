@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useSelector } from 'react-redux';
 import { sentRequest } from '../../services/queries';
 import LoadSvgIcon from '../../utils/LoadSvgIcon';
-import FullModal from '../../components/modals/FullModal';
+import ConfirmModal from '../../components/modals/ConfirmModal';
 import Button from '../../components/ui/button/Button';
 
 const RequestRegistrationBtn = ({ mode }) => {
@@ -92,7 +92,7 @@ const RequestRegistrationBtn = ({ mode }) => {
                 </button>
             </div>
 
-            <FullModal
+            <ConfirmModal
                 options={{
                     show: resultModal,
                     setShow: () => setResultModal(false),
@@ -120,7 +120,7 @@ const RequestRegistrationBtn = ({ mode }) => {
                         </div>
                     )}
                 </div>
-            </FullModal>
+            </ConfirmModal>
         </>
     )
 }
