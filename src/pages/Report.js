@@ -4,9 +4,16 @@ import ConfirmModal from '../components/modals/ConfirmModal';
 import LoadSvgIcon from '../utils/LoadSvgIcon';
 import DatePicker from '../components/datePicker/DatePicker';
 import FullModal from '../components/modals/FullModal';
+import DetailedReports from '../containers/reports/DetailedReports';
+import { useSelector } from 'react-redux';
+import { getReports } from '../services/queries';
 
 const Report = () => {
 
+    const { user } = useSelector(store => store.user);
+
+    const [loading, setLoading] = useState(false);
+    const [reports, setReports] = useState(null);
     const [summaryReportModal, setSummaryReportModal] = useState(false);
     const [detailedReportModal, setDetailedReportModal] = useState(false);
     const [titleModal, setTitleModal] = useState('');
@@ -16,11 +23,28 @@ const Report = () => {
         year: null
     });
 
-    console.log('selectedDate', selectedDate);
-
     const closeDatePickerModal = () => {
         setSelectedDate({ month: null, year: null })
         setShowDatePicker(false)
+    }
+
+    const getReportsHandler = (mode) => { // mode == summary-report or detailed-report
+        setLoading(true)
+        const params = {
+            creator: user?._id,
+            date: `${selectedDate.year}/${selectedDate.month.value}`,
+            mode: mode
+        }
+
+        getReports(params)
+            .then(res => {
+                console.log(res)
+                setLoading(false)
+                setReports(res?.reports)
+            }).catch(err => {
+                console.log(err);
+                setLoading(false)
+            })
     }
 
     return (
@@ -42,6 +66,7 @@ const Report = () => {
                         onClick={() => {
                             setSummaryReportModal(true)
                             setTitleModal('گزارش خلاصه')
+                            getReportsHandler('summary-report')
                         }}
                     />
                     <Button
@@ -50,6 +75,7 @@ const Report = () => {
                         onClick={() => {
                             setDetailedReportModal(true)
                             setTitleModal('گزارش تفصیلی')
+                            getReportsHandler('detailed-report')
                         }}
                     />
                 </div>
@@ -92,7 +118,7 @@ const Report = () => {
             >
                 <div className="h-full overflow-hidden overflow-y-auto">
                     {summaryReportModal && <p>خلاصه گزارش</p>}
-                    {detailedReportModal && <p>گزارش تفصیلی</p>}
+                    {detailedReportModal && <DetailedReports reports={reports} loading={loading} />}
                 </div>
             </FullModal>
         </>
