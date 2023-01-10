@@ -16,18 +16,33 @@ const ReportItem = ({ item }) => {
         return m.locale('fa').format('D MMMM YYYY')
     }
 
+    // remove second from time
+    const RemoveSecondFromTime = (time) => {
+        if (time) {
+            let m = moment.from(time, 'fa', 'HH:mm:ss')
+            return m.locale('fa').format('HH:mm')
+        } else {
+            return '----'
+        }
+    }
+
     return (
         <div className='bg-light rounded-md border border-primary/50 mb-1 flex items-stretch'>
-            <div className="w-28 border-l border-primary text-xxs text-captionDark text-center py-3">
+            <div className="w-28 border-l border-primary text-xxs text-captionDark flex flex-col justify-center items-center py-3">
                 <p className='mb-0.5'>{changeDateToDay(item?.date)}</p>
                 <p className=''>{changeDateToTextMonth(item?.date)}</p>
             </div>
             <div className="flex-grow flex justify-between items-center px-3">
-                <div className='flex text-xxs text-captionDark'>
-                    <p>08:00</p>
-                    <p className='px-1'>تا</p>
-                    <p>17:00</p>
+                <div className="flex flex-col py-1">
+                    {item?.entryAndExit?.map(item => {
+                        return <div className='flex text-xxs text-captionDark'>
+                            <p className='w-[30px] text-center'>{RemoveSecondFromTime(item?.enter?.time)}</p>
+                            <p className='px-1'>تا</p>
+                            <p className='w-[30px] text-center'>{RemoveSecondFromTime(item?.exit?.time)}</p>
+                        </div>
+                    })}
                 </div>
+
                 <div className='text-xxs text-captionDark text-center'>
                     <p className='mb-0.5'>جمع کل</p>
                     <p>07:18</p>
