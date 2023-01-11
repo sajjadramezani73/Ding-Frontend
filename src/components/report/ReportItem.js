@@ -45,7 +45,7 @@ const ReportItem = ({ item }) => {
 
                 <div className='text-xxs text-captionDark text-center'>
                     <p className='mb-0.5'>جمع کل</p>
-                    <p>07:18</p>
+                    <p>{RemoveSecondFromTime(item?.totalTime)}</p>
                 </div>
             </div>
         </div>
