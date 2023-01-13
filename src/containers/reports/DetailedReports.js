@@ -1,4 +1,4 @@
-import React from 'react'
+import Nullpage from '../../components/nullPage/Nullpage';
 import ReportItem from '../../components/report/ReportItem';
 import LoadSvgIcon from '../../utils/LoadSvgIcon'
 
@@ -13,7 +13,7 @@ const DetailedReports = ({ reports, loading }) => {
         ) : reports?.length > 0 ? (
             reports.map(item => <ReportItem item={item} />)
         ) : (
-            <p>empty</p>
+            <Nullpage />
         )
     )
 }
