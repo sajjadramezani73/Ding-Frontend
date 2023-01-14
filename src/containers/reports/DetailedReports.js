@@ -3,8 +3,6 @@ import ReportItem from '../../components/report/ReportItem';
 import LoadSvgIcon from '../../utils/LoadSvgIcon'
 
 const DetailedReports = ({ reports, loading }) => {
-    console.log('loading', loading);
-    console.log('reports', reports)
     return (
         loading ? (
             <div className='h-full flex justify-center items-center'>

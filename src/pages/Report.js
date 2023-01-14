@@ -4,9 +4,10 @@ import ConfirmModal from '../components/modals/ConfirmModal';
 import LoadSvgIcon from '../utils/LoadSvgIcon';
 import DatePicker from '../components/datePicker/DatePicker';
 import FullModal from '../components/modals/FullModal';
-import DetailedReports from '../containers/reports/DetailedReports';
 import { useSelector } from 'react-redux';
 import { getReports } from '../services/queries';
+import DetailedReports from '../containers/reports/DetailedReports';
+import SummaryReports from '../containers/reports/SummaryReports';
 
 const Report = () => {
 
@@ -117,7 +118,7 @@ const Report = () => {
                 }}
             >
                 <div className="h-full overflow-hidden overflow-y-auto">
-                    {summaryReportModal && <p>خلاصه گزارش</p>}
+                    {summaryReportModal && <SummaryReports reports={reports} loading={loading} />}
                     {detailedReportModal && <DetailedReports reports={reports} loading={loading} />}
                 </div>
             </FullModal>
