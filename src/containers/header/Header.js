@@ -17,7 +17,7 @@ const Header = () => {
 
     return (
         <div className='h-14 min-h-[56px] bg-primary grid grid-cols-7 items-center px-4'>
-            <span onClick={() => setShowSidebar(true)}>
+            <span className='cursor-pointer' onClick={() => setShowSidebar(true)}>
                 <LoadSvgIcon name="hamberger" color="#ffffff" weight={1.5} />
             </span>
             <p className='text-white text-tiny col-span-5 text-center'>{searchParams.get('title')}</p>
