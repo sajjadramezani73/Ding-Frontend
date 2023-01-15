@@ -8,6 +8,7 @@ import { useSelector } from 'react-redux';
 import { getReports } from '../services/queries';
 import DetailedReports from '../containers/reports/DetailedReports';
 import SummaryReports from '../containers/reports/SummaryReports';
+import { toast } from 'react-toastify';
 
 const Report = () => {
 
@@ -48,6 +49,21 @@ const Report = () => {
             })
     }
 
+    const openModalHandler = (mode) => {
+        if (selectedDate.month == null || selectedDate.year == null) {
+            toast.warning('لصفا ماه و سال مورد نظر خود را انتخاب کنید')
+        } else if (mode === 'detailed-report') {
+            setDetailedReportModal(true)
+            setTitleModal('گزارش تفصیلی')
+            getReportsHandler('detailed-report')
+
+        } else if (mode === 'summary-report') {
+            setSummaryReportModal(true)
+            setTitleModal('گزارش خلاصه')
+            getReportsHandler('summary-report')
+        }
+    }
+
     return (
         <>
             <div className='h-full p-4 flex flex-col justify-between'>
@@ -64,20 +80,12 @@ const Report = () => {
                 <div className="grid grid-cols-2 gap-x-4">
                     <Button
                         title="گزارش خلاصه"
-                        onClick={() => {
-                            setSummaryReportModal(true)
-                            setTitleModal('گزارش خلاصه')
-                            getReportsHandler('summary-report')
-                        }}
+                        onClick={() => openModalHandler('summary-report')}
                     />
                     <Button
                         title="گزارش تفصیلی"
                         outline={true}
-                        onClick={() => {
-                            setDetailedReportModal(true)
-                            setTitleModal('گزارش تفصیلی')
-                            getReportsHandler('detailed-report')
-                        }}
+                        onClick={() => openModalHandler('detailed-report')}
                     />
                 </div>
             </div>
