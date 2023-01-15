@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import CommentItem from '../components/comment/CommentItem';
 import CommentItemShimmer from '../components/comment/CommentItemShimmer';
+import Nullpage from '../components/nullPage/Nullpage';
 import Button from '../components/ui/button/Button';
 import { getComments } from '../services/queries';
 
@@ -44,8 +45,8 @@ const Comments = () => {
                                 )
                             })
                         ) : (
-                            <li className="text-center text-primary text-sm mt-10">
-                                متاسفانه نظری برای نمایش وجود ندارد!
+                            <li className="h-full ">
+                                <Nullpage title="متاسفانه نظری برای نمایش وجود ندارد" />
                             </li>
                         )}
                     </ul>
