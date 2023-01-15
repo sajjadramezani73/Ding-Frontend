@@ -18,7 +18,7 @@ const Layout = () => {
                 <Route path="/" element={<Splash />} />
                 <Route path="/home" element={<Home />} >
                     <Route index element={<RequestRegistration />} />
-                    <Route path="profile/:userId" element={<Profile />} />
+                    <Route path="profile" element={<Profile />} />
                     <Route path="comments" element={<Comments />} />
                     <Route path="add-comment/:userId" element={<AddComment />} />
                     <Route path="about" element={<About />} />
