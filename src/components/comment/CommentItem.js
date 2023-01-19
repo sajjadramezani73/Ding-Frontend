@@ -2,7 +2,7 @@ import { baseUrl } from '../../constant';
 import CommentRating from './CommentRating'
 import manAvatar from '../../assets/images/man.svg';
 import womanAvatar from '../../assets/images/woman.svg'
-import moment from 'jalali-moment';
+import { changeDateToText } from '../../utils/DateFanctions'
 
 const CommentItem = ({ comment }) => {
 
@@ -19,12 +19,6 @@ const CommentItem = ({ comment }) => {
     const splitDate = (data) => {
         const time = data.split(' ')
         return time
-    }
-
-    // convert number month to text month
-    const changeDateToText = (date) => {
-        let m = moment.from(date, 'fa', 'YYYY/MM/DD')
-        return m.locale('fa').format('D MMMM YYYY')
     }
 
     return (
