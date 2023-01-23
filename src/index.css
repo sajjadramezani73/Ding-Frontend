@@ -91,6 +91,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   direction: rtl;
+  user-select: none;
 }
 
 * {
@@ -226,3 +227,36 @@ button:disabled {
 }
 
 /****** modal *********/
+
+/****** swipeable *********/
+
+.swipeable-list-item {
+  border-radius: 100px;
+}
+
+.swipeable-list-item__content {
+  height: 40px !important;
+  background: var(--color-captionLight) !important;
+  border-radius: 100px !important;
+}
+
+.swipeRight .swipeable-list-item__content {
+  justify-content: end !important;
+}
+
+.swipeleft .swipeable-list-item__content {
+  justify-content: start !important;
+}
+
+.swipeable-list-item__content-right,
+.swipeable-list-item__content-left {
+  opacity: 1 !important;
+}
+
+.basic-swipeable-list__item-content {
+  background-color: var(--color-primary);
+  height: 100%;
+  width: 100%;
+}
+
+/****** swipeable *********/

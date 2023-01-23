@@ -1,40 +1,13 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { useSelector } from 'react-redux';
 import { sentRequest } from '../../services/queries';
 import LoadSvgIcon from '../../utils/LoadSvgIcon';
 import ConfirmModal from '../../components/modals/ConfirmModal';
 import Button from '../../components/ui/button/Button';
+import { SwipeableList, SwipeableListItem } from '@sandstreamdev/react-swipeable-list';
+import '@sandstreamdev/react-swipeable-list/dist/styles.css';
 
 const RequestRegistrationBtn = ({ mode }) => {
-
-    // const btnRef = useRef()
-    // console.log(btnRef)
-
-    // const [startX, setStartX] = useState(0);
-
-    // const mouseDownHandler = (e) => {
-
-    //     console.log(e.target);
-
-    //     document.addEventListener("mousemove", mouseMove)
-    //     document.addEventListener('mouseup', function () {
-    //         btnRef.current.style.left = 0
-    //         document.removeEventListener('mousemove', mouseMove);
-    //     });
-    // }
-
-    // const mouseMove = (e) => {
-    //     console.log('clientX', e.clientX, 'offsetX', e.offsetX, 'pageX', e.pageX, 'screenX', e.screenX);
-    //     console.log(btnRef.current.getBoundingClientRect().left - e.clientX)
-    //     let newX = btnRef.current.getBoundingClientRect().left - e.clientX
-
-    //     if (getComputedStyle(btnRef.current).right <= 0 + 'px' || getComputedStyle(btnRef.current).left < 0 + 'px') {
-
-    //     } else {
-    //         btnRef.current.style.left = btnRef.current.offsetLeft - (newX) + 'px'
-    //     }
-    //     // console.log('getComputedStyle(btnRef.current).right', getComputedStyle(btnRef.current).right)
-    // }
 
     const { user } = useSelector(store => store.user);
     const { map } = useSelector(store => store.map);
@@ -48,49 +21,66 @@ const RequestRegistrationBtn = ({ mode }) => {
         message: ''
     });
 
-    const sendRequestHandler = (mode) => {
-        setLoading(true)
-        setResultModal(true)
-        sentRequest({ creator: user?._id, mode: mode, ...map })
-            .then(res => {
-                setResult({
-                    success: res?.success,
-                    message: res?.message
-                })
-                setLoading(false)
-            }).catch(err => {
-                setResult({
-                    success: err?.response?.data?.success,
-                    message: err?.response?.data?.message ? err?.response?.data?.message : 'متاسفانه خطایی رخ داده است!'
-                })
-                setLoading(false)
+    const sendRequestHandler = (requestMode) => {
+        if (mode === 'device') {
+            setResultModal(true)
+            setResult({
+                success: 0,
+                message: 'به دلیل عدم وجود دستگاه، این بخش غیر فعال می باشد'
             })
+        } else {
+            setLoading(true)
+            setResultModal(true)
+            sentRequest({ creator: user?._id, mode: requestMode, ...map })
+                .then(res => {
+                    setResult({
+                        success: res?.success,
+                        message: res?.message
+                    })
+                    setLoading(false)
+                }).catch(err => {
+                    setResult({
+                        success: err?.response?.data?.success,
+                        message: err?.response?.data?.message ? err?.response?.data?.message : 'متاسفانه خطایی رخ داده است!'
+                    })
+                    setLoading(false)
+                })
+        }
+
     }
 
     return (
         <>
-            <div className="h-10 bg-captionLight rounded-full flex justify-end mb-2 relative" disabled={true}>
-                <button
-                    className="flex items-center text-sm bg-primary text-white rounded-full h-full px-4 absolute"
-                    // onMouseDown={mouseDownHandler}
-                    // onTouchStart={mouseDownHandler}
-                    // ref={btnRef}
-                    disabled={mode === 'device'}
-                    onClick={() => sendRequestHandler('enter')}
-                >
-                    <LoadSvgIcon name="chevronRight" size={20} weight={1.5} color="#FFFFFF" />
-                    ورود
-                </button>
-            </div>
-            <div className="h-10 bg-captionLight rounded-full flex">
-                <button className="flex items-center text-sm bg-primary text-white rounded-full h-full px-4"
-                    disabled={mode === 'device'}
-                    onClick={() => sendRequestHandler('exit')}
-                >
-                    خروج
-                    <LoadSvgIcon name="chevronLeft" size={20} weight={1.5} color="#FFFFFF" />
-                </button>
-            </div>
+            <SwipeableList>
+                <div className="swipeRight mb-2">
+                    <SwipeableListItem
+                        swipeRight={{
+                            content: <div className="basic-swipeable-list__item-content"></div>,
+                            action: () => sendRequestHandler('enter')
+                        }}
+                        swipeStartThreshold={0}
+                    >
+                        <div className='flex justify-center items-center text-sm bg-primary text-white rounded-full w-[80px] h-full cursor-pointer -translate-x-px select-none'>
+                            <LoadSvgIcon name="chevronRight" size={20} weight={1.5} color="#FFFFFF" />
+                            ورود
+                        </div>
+                    </SwipeableListItem>
+                </div>
+                <div className="swipeLeft">
+                    <SwipeableListItem
+                        swipeLeft={{
+                            content: <div className="basic-swipeable-list__item-content"></div>,
+                            action: () => sendRequestHandler('exit')
+                        }}
+                        swipeStartThreshold={0}
+                    >
+                        <div className='flex justify-center items-center text-sm bg-primary text-white rounded-full w-[80px] h-full cursor-pointer translate-x-px select-none'>
+                            خروج
+                            <LoadSvgIcon name="chevronLeft" size={20} weight={1.5} color="#FFFFFF" />
+                        </div>
+                    </SwipeableListItem>
+                </div>
+            </SwipeableList>
 
             <ConfirmModal
                 options={{
@@ -109,7 +99,7 @@ const RequestRegistrationBtn = ({ mode }) => {
                             ) : (
                                 <LoadSvgIcon name="resultDanger" color="var(--color-danger)" size={35} />
                             )}
-                            <p className='text-sm text-captionDark py-4'>{result?.message}</p>
+                            <p className='text-sm text-captionDark text-center py-4'>{result?.message}</p>
                             <div className="">
                                 <Button
                                     title="متوجه شدم"
