@@ -40,7 +40,6 @@ const Signup = () => {
             password: infoSignup.password,
             gender: infoSignup.gender
         }).then(res => {
-            console.log(res);
             toast.success(res?.message)
             setLoading(false)
             setInfoSignup({ firstName: '', lastName: '', username: '', password: '', confirmPassword: '', gender: '' })

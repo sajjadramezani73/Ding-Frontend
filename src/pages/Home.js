@@ -19,7 +19,6 @@ const Home = () => {
                     res.userValid !== true && navigate('/signup-login')
                 })
                 .catch(err => {
-                    console.log(err)
                     navigate('/signup-login')
                 })
         }

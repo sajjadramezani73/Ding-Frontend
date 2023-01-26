@@ -40,11 +40,9 @@ const Report = () => {
 
         getReports(params)
             .then(res => {
-                console.log(res)
                 setLoading(false)
                 setReports(res?.reports)
             }).catch(err => {
-                console.log(err);
                 setLoading(false)
             })
     }

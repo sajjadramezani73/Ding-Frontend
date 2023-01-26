@@ -31,12 +31,10 @@ const AddComment = () => {
         setLoading(true)
         sentComment({ ...dataComment, creator: user?._id })
             .then(res => {
-                console.log(res);
                 toast.success(res?.message)
                 setLoading(false)
                 setDataComment({ score: 1, title: '', comment: '' })
             }).catch(err => {
-                console.log(err)
                 toast.error(err?.response?.data?.message ? err?.response?.data?.message : 'متاسفانه خطایی رخ داده است!')
                 setLoading(false)
             })

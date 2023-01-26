@@ -11,8 +11,6 @@ const RequestRegistrationBtn = ({ mode }) => {
 
     const { user } = useSelector(store => store.user);
     const { map } = useSelector(store => store.map);
-    console.log(user)
-    console.log(map)
 
     const [resultModal, setResultModal] = useState(false);
     const [loading, setLoading] = useState(false);

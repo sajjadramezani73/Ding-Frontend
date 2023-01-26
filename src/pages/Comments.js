@@ -20,7 +20,6 @@ const Comments = () => {
                 setComments(res?.comments)
                 setLoading(false)
             }).catch(err => {
-                console.log(err);
                 setLoading(false)
             })
     }, [])
