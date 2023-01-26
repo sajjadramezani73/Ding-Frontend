@@ -10,6 +10,7 @@ import Comments from '../../pages/Comments';
 import AddComment from '../../pages/AddComment';
 import About from '../../pages/About';
 import Report from '../../pages/Report';
+import Setting from '../../pages/Setting';
 
 const Layout = () => {
     return (
@@ -23,6 +24,7 @@ const Layout = () => {
                     <Route path="add-comment/:userId" element={<AddComment />} />
                     <Route path="about" element={<About />} />
                     <Route path="report" element={<Report />} />
+                    <Route path="setting" element={<Setting />} />
                 </Route>
                 <Route path="/signup-login" element={<SignupLogin />} />
             </Routes>
