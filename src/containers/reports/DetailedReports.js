@@ -9,7 +9,7 @@ const DetailedReports = ({ reports, loading }) => {
                 <LoadSvgIcon name="loading" fill="var(--color-caption)" />
             </div>
         ) : reports?.length > 0 ? (
-            reports.map(item => <ReportItem item={item} />)
+            reports.map(item => <ReportItem item={item} key={item._id} />)
         ) : (
             <Nullpage />
         )

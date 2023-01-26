@@ -14,8 +14,8 @@ const ReportItem = ({ item }) => {
             </div>
             <div className="flex-grow flex justify-between items-center px-3">
                 <div className="flex flex-col py-1">
-                    {item?.entryAndExit?.map(item => {
-                        return <div className='flex text-xxs text-captionDark'>
+                    {item?.entryAndExit?.map((item, index) => {
+                        return <div className='flex text-xxs text-captionDark' key={index}>
                             <p className='w-[30px] text-center'>{removeSecondFromTimeWithEmptyString(item?.enter?.time)}</p>
                             <p className='px-1'>تا</p>
                             <p className='w-[30px] text-center'>{removeSecondFromTimeWithEmptyString(item?.exit?.time)}</p>
