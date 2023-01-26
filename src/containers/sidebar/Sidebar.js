@@ -1,14 +1,19 @@
 import ModalRoot from '../../components/modals/Modal-root'
 import SidebarLinks from './components/SidebarLinks'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { baseUrl } from '../../constant';
 import manAvatar from '../../assets/images/man.svg';
 import womanAvatar from '../../assets/images/woman.svg'
 import Button from '../../components/ui/button/Button';
+import { useNavigate } from 'react-router-dom';
+import Cookies from 'js-cookie';
+import { addUser } from '../../store/userSlice';
 
 const Sidebar = ({ show, setShow }) => {
 
     const { user } = useSelector(store => store.user);
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
 
     const avatar = (user) => {
         if (user?.avatar !== '') {
@@ -16,6 +21,12 @@ const Sidebar = ({ show, setShow }) => {
         } else {
             return user?.gender === "male" ? manAvatar : womanAvatar
         }
+    }
+
+    const logoutHandler = () => {
+        navigate('/signup-login')
+        Cookies.remove('token');
+        dispatch(addUser(null));
     }
 
     return (
@@ -34,9 +45,7 @@ const Sidebar = ({ show, setShow }) => {
                         <div className='px-10'>
                             <Button
                                 title="خروج"
-                                // disabled={true}
-                                // loading={true}
-                                onClick={() => console.log('log out')}
+                                onClick={() => logoutHandler()}
                             />
                         </div>
                     </div>
