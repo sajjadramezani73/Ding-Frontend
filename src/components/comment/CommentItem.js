@@ -1,19 +1,8 @@
-import { baseUrl } from '../../constant';
 import CommentRating from './CommentRating'
-import manAvatar from '../../assets/images/man.svg';
-import womanAvatar from '../../assets/images/woman.svg'
 import { changeDateToText } from '../../utils/DateFanctions'
+import { avatar } from '../../utils/AvatarSet';
 
 const CommentItem = ({ comment }) => {
-
-    // set Avater user or static avater
-    const avatar = (user) => {
-        if (user?.avatar !== '') {
-            return baseUrl + '/' + user?.avatar
-        } else {
-            return user?.gender === "male" ? manAvatar : womanAvatar
-        }
-    }
 
     // split time and date of created_at
     const splitDate = (data) => {
