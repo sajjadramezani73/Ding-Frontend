@@ -12,7 +12,7 @@ const Header = () => {
 
     useEffect(() => {
         showSidebar === true && setShowSidebar(false)
-    }, [location.pathname])
+    }, [location])
 
 
     return (
