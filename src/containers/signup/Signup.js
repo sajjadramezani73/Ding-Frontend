@@ -19,6 +19,7 @@ const Signup = () => {
         { value: 'male', title: 'مرد' },
         { value: 'famale', title: 'زن' }
     ]);
+    const [haveErrorPassword, setHaveErrorPassword] = useState(null);
     const [disabled, setDisabled] = useState(false);
     const [loading, setLoading] = useState(false);
 
@@ -31,22 +32,35 @@ const Signup = () => {
             infoSignup.gender === '' ? setDisabled(true) : setDisabled(false)
     }, [infoSignup])
 
+    const validPasswordHandler = () => {
+        if (infoSignup.password === infoSignup.confirmPassword) {
+            setHaveErrorPassword(false)
+            return true
+        } else {
+            setHaveErrorPassword(true)
+            return false
+        }
+    }
+
     const signupHandler = () => {
-        setLoading(true)
-        signupUser({
-            firstName: infoSignup.firstName,
-            lastName: infoSignup.lastName,
-            username: infoSignup.username,
-            password: infoSignup.password,
-            gender: infoSignup.gender
-        }).then(res => {
-            toast.success(res?.message)
-            setLoading(false)
-            setInfoSignup({ firstName: '', lastName: '', username: '', password: '', confirmPassword: '', gender: '' })
-        }).catch(err => {
-            toast.error(err?.response?.data?.message)
-            setLoading(false)
-        })
+        const isValid = validPasswordHandler()
+        if (isValid) {
+            setLoading(true)
+            signupUser({
+                firstName: infoSignup.firstName,
+                lastName: infoSignup.lastName,
+                username: infoSignup.username,
+                password: infoSignup.password,
+                gender: infoSignup.gender
+            }).then(res => {
+                toast.success(res?.message)
+                setLoading(false)
+                setInfoSignup({ firstName: '', lastName: '', username: '', password: '', confirmPassword: '', gender: '' })
+            }).catch(err => {
+                toast.error(err?.response?.data?.message)
+                setLoading(false)
+            })
+        }
     }
 
     return (
@@ -84,6 +98,7 @@ const Signup = () => {
                     iconName="lock"
                     placeholder="رمز عبور"
                     onChange={(e => setInfoSignup({ ...infoSignup, password: e.target.value }))}
+                    haveError={haveErrorPassword}
                 />
                 <Input
                     type='password'
@@ -91,6 +106,7 @@ const Signup = () => {
                     iconName="lock"
                     placeholder="تکرار رمز عبور"
                     onChange={(e => setInfoSignup({ ...infoSignup, confirmPassword: e.target.value }))}
+                    haveError={haveErrorPassword}
                 />
             </div>
             <div className="flex mr-0.5 gap-x-3">

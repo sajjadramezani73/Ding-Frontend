@@ -10,8 +10,9 @@ const Input = ({
     rule = "",
     value = "",
     onChange,
-    disabled=false,
+    disabled = false,
     attributes = {},
+    haveError
 }) => {
 
     const { validate } = useValidation()
@@ -26,6 +27,14 @@ const Input = ({
     useEffect(() => {
         inputValue === '' && setValidInput(null)
     }, [inputValue])
+
+    useEffect(() => {
+        if (haveError === true) {
+            setValidInput(false)
+        } else if (haveError === false) {
+            setValidInput(true)
+        }
+    }, [haveError])
 
 
     const onChangeHandler = (val) => {
@@ -45,7 +54,8 @@ const Input = ({
         <>
             <div className={`flex items-center border border-captionLight h-10 rounded-md 
             ${disabled && 'opacity-60 bg-gray-50'}
-            ${validInput ? 'bg-gray-100' : 'bg-white'}`}>
+            ${validInput ? 'bg-gray-100' : 'bg-white'}
+            ${validInput === false ? 'border-danger' : ''}`}>
                 <div className='w-10 min-w-[40px] h-full flex justify-center items-center'>
                     <LoadSvgIcon name={iconName} size="16" weight={1.5} color="var(--color-captionLight)" />
                 </div>
@@ -61,10 +71,17 @@ const Input = ({
                         {...attributes}
                     />
                 </div>
-                {validInput && (
+                {validInput === true && (
                     <div className="w-10 min-w-[40px] h-full flex items-center justify-center">
                         <span className=''>
                             <LoadSvgIcon name="check" size={18} weight={1.5} color="var(--color-primary)" />
+                        </span>
+                    </div>
+                )}
+                {validInput === false && (
+                    <div className="w-10 min-w-[40px] h-full flex items-center justify-center">
+                        <span className=''>
+                            <LoadSvgIcon name="close-circle" size={18} weight={1.5} color="var(--color-danger)" />
                         </span>
                     </div>
                 )}
