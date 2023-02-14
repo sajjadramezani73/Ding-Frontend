@@ -21,12 +21,8 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    infoLogin.firstName === '' ||
-      infoLogin.lastName === '' ||
-      infoLogin.username === '' ||
-      infoLogin.password === '' ||
-      infoLogin.confirmPassword === '' ||
-      infoLogin.gender === '' ? setDisabled(true) : setDisabled(false)
+    infoLogin.username === '' ||
+      infoLogin.password === '' ? setDisabled(true) : setDisabled(false)
   }, [infoLogin])
 
   const loginHandler = () => {
